@@ -13,6 +13,7 @@
 @property (strong, readonly) NSURL *url;
 @property (strong, readonly) NSString *title;
 @property (strong, readonly) NSURL *thumbnailURL;
+@property (strong, readonly) NSString *html;
 @property (strong, readonly) NSString *type;
 @property (strong, readonly) NSString *service;
 

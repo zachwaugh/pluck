@@ -17,6 +17,7 @@
 	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://cl.ly/AJbz"]]).to.beTruthy();
 	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://www.youtube.com/watch?v=90Omh7_I8vI"]]).to.beTruthy();
 	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://flic.kr/p/8yKma5"]]).to.beTruthy();
+	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
 }
 
 - (void)testItemForURL

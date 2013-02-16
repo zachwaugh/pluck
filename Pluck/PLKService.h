@@ -20,7 +20,6 @@ enum {
 @interface PLKService : NSObject
 
 + (NSArray *)services;
-+ (void)setServices:(NSArray *)services;
 
 + (BOOL)isPluckableURL:(NSURL *)url;
 + (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *item, NSError *error))block;

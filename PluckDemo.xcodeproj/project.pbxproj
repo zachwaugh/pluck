@@ -29,6 +29,10 @@
 		926EF76C16D03F15004D8EE6 /* PLKFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF76A16D03F15004D8EE6 /* PLKFlickrService.m */; };
 		926EF76E16D040A7004D8EE6 /* flickr.json in Resources */ = {isa = PBXBuildFile; fileRef = 926EF76D16D040A7004D8EE6 /* flickr.json */; };
 		926EF77116D040B5004D8EE6 /* PLKFlickrServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF77016D040B5004D8EE6 /* PLKFlickrServiceTest.m */; };
+		926EF77416D047E3004D8EE6 /* PLKVimeoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF77316D047E3004D8EE6 /* PLKVimeoService.m */; };
+		926EF77516D047E3004D8EE6 /* PLKVimeoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF77316D047E3004D8EE6 /* PLKVimeoService.m */; };
+		926EF77716D049DC004D8EE6 /* vimeo.json in Resources */ = {isa = PBXBuildFile; fileRef = 926EF77616D049DC004D8EE6 /* vimeo.json */; };
+		926EF77A16D049EB004D8EE6 /* PLKVimeoServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -79,6 +83,11 @@
 		926EF76D16D040A7004D8EE6 /* flickr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flickr.json; sourceTree = "<group>"; };
 		926EF76F16D040B5004D8EE6 /* PLKFlickrServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKFlickrServiceTest.h; sourceTree = "<group>"; };
 		926EF77016D040B5004D8EE6 /* PLKFlickrServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKFlickrServiceTest.m; sourceTree = "<group>"; };
+		926EF77216D047E3004D8EE6 /* PLKVimeoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKVimeoService.h; sourceTree = "<group>"; };
+		926EF77316D047E3004D8EE6 /* PLKVimeoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKVimeoService.m; sourceTree = "<group>"; };
+		926EF77616D049DC004D8EE6 /* vimeo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vimeo.json; sourceTree = "<group>"; };
+		926EF77816D049EA004D8EE6 /* PLKVimeoServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKVimeoServiceTest.h; sourceTree = "<group>"; };
+		926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKVimeoServiceTest.m; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -183,6 +192,7 @@
 		926EF75C16D033D8004D8EE6 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				926EF77616D049DC004D8EE6 /* vimeo.json */,
 				926EF76D16D040A7004D8EE6 /* flickr.json */,
 				926EF76616D03796004D8EE6 /* youtube.json */,
 				926EF75D16D033D8004D8EE6 /* cloudapp.json */,
@@ -259,6 +269,8 @@
 			children = (
 				92BCAF6C16D01C04006264DE /* PLKItemTest.h */,
 				92BCAF6D16D01C04006264DE /* PLKItemTest.m */,
+				926EF75316D02584004D8EE6 /* NSURL+PluckTest.h */,
+				926EF75416D02584004D8EE6 /* NSURL+PluckTest.m */,
 				926EF74816D023E2004D8EE6 /* PLKServiceTest.h */,
 				926EF74916D023E2004D8EE6 /* PLKServiceTest.m */,
 				926EF75616D0287E004D8EE6 /* PLKCloudAppServiceTest.h */,
@@ -267,8 +279,8 @@
 				926EF76416D0370F004D8EE6 /* PLKYoutubeServiceTest.m */,
 				926EF76F16D040B5004D8EE6 /* PLKFlickrServiceTest.h */,
 				926EF77016D040B5004D8EE6 /* PLKFlickrServiceTest.m */,
-				926EF75316D02584004D8EE6 /* NSURL+PluckTest.h */,
-				926EF75416D02584004D8EE6 /* NSURL+PluckTest.m */,
+				926EF77816D049EA004D8EE6 /* PLKVimeoServiceTest.h */,
+				926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */,
 				92BCAF3A16D0175A006264DE /* Expecta */,
 				92BCAEF616D007C9006264DE /* Supporting Files */,
 			);
@@ -299,6 +311,8 @@
 				926EF76016D03666004D8EE6 /* PLKYoutubeService.m */,
 				926EF76916D03F15004D8EE6 /* PLKFlickrService.h */,
 				926EF76A16D03F15004D8EE6 /* PLKFlickrService.m */,
+				926EF77216D047E3004D8EE6 /* PLKVimeoService.h */,
+				926EF77316D047E3004D8EE6 /* PLKVimeoService.m */,
 				926EF74F16D024E0004D8EE6 /* NSURL+Pluck.h */,
 				926EF75016D024E0004D8EE6 /* NSURL+Pluck.m */,
 			);
@@ -471,6 +485,7 @@
 				926EF75E16D033D8004D8EE6 /* cloudapp.json in Resources */,
 				926EF76716D03796004D8EE6 /* youtube.json in Resources */,
 				926EF76E16D040A7004D8EE6 /* flickr.json in Resources */,
+				926EF77716D049DC004D8EE6 /* vimeo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +529,7 @@
 				926EF75116D024E0004D8EE6 /* NSURL+Pluck.m in Sources */,
 				926EF76116D03666004D8EE6 /* PLKYoutubeService.m in Sources */,
 				926EF76B16D03F15004D8EE6 /* PLKFlickrService.m in Sources */,
+				926EF77416D047E3004D8EE6 /* PLKVimeoService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +553,8 @@
 				926EF76816D03C78004D8EE6 /* AFHTTPClient.m in Sources */,
 				926EF76C16D03F15004D8EE6 /* PLKFlickrService.m in Sources */,
 				926EF77116D040B5004D8EE6 /* PLKFlickrServiceTest.m in Sources */,
+				926EF77516D047E3004D8EE6 /* PLKVimeoService.m in Sources */,
+				926EF77A16D049EB004D8EE6 /* PLKVimeoServiceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

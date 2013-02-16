@@ -26,7 +26,6 @@
   [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
   
   AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-    
     PLKItem *item = [self itemFromDictionary:JSON];
     
     if (block) block(item, nil);
@@ -41,7 +40,7 @@
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
 	// We only care about image drops
-	if (dict && [dict[@"item_type"] isEqualToString:@"image"]) {
+	if ([dict[@"item_type"] isEqualToString:@"image"]) {
 		return [PLKItem itemWithDictionary:@{
 						@"url": [NSURL URLWithString:dict[@"content_url"]],
 						@"type": @"image",

@@ -34,6 +34,7 @@
 	
 	PLKItem *item = [PLKFlickrService itemFromDictionary:dict];
 	expect(item).toNot.beNil();
+	expect(item.type).to.equal(@"photo");
 	expect(item.url).to.equal([NSURL URLWithString:@"http://farm5.staticflickr.com/4109/4965082870_00725ef91e_b.jpg"]);
 	expect(item.service).to.equal(@"Flickr");
 	expect(item.title).to.equal(@"Zoe with feather");

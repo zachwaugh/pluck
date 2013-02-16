@@ -1,40 +1,39 @@
 //
-//  PLKFlickrService.m
-//  Pluck
+//  PLKVimeoService.m
+//  PluckDemo
 //
 //  Created by Zach Waugh on 2/16/13.
 //  Copyright (c) 2013 Zach Waugh. All rights reserved.
 //
 
-#import "PLKFlickrService.h"
+#import "PLKVimeoService.h"
 #import "PLKItem.h"
-#import "NSURL+Pluck.h"
 #import "AFHTTPClient.h"
+#import "NSURL+Pluck.h"
 
-#define FLICKR_REGEX @"https?://.*(flickr\\.com/photos|flic\\.kr/p)/.*"
+#define VIMEO_REGEX @"https?://.*vimeo\\.com/.*"
 
-@implementation PLKFlickrService
+@implementation PLKVimeoService
 
 + (BOOL)isPluckableURL:(NSURL *)url
 {
-	return [url plk_isMatchedByRegex:FLICKR_REGEX];
+	return [url plk_isMatchedByRegex:VIMEO_REGEX];
 }
 
 + (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
 {
-	AFHTTPClient *flickrClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.flickr.com/"]];
-	NSDictionary *params = @{ @"url": url.absoluteString, @"format": @"json" };
+	AFHTTPClient *flickrClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://vimeo.com/"]];
+	NSDictionary *params = @{ @"url": url.absoluteString};
 	
-	[flickrClient getPath:@"services/oembed/" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+	[flickrClient getPath:@"api/oembed.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		NSError *error = nil;
 		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
 		
 		if (error) {
 			NSLog(@"error creating json from response: %@", error);
 		}
-				
-		PLKItem *item = [self itemFromDictionary:dict];
 		
+		PLKItem *item = [self itemFromDictionary:dict];
 		if (block) block(item, nil);
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 		if (block) block(nil, error);
@@ -46,9 +45,10 @@
 	if (dict) {
 		return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],
-						@"url": [NSURL URLWithString:dict[@"url"]],
+						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
 						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"service": @"Flickr",
+						@"html": dict[@"html"],
+						@"service": @"Vimeo",
 						@"title": dict[@"title"]
 						}];
 	}

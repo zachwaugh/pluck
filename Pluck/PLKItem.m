@@ -25,6 +25,7 @@
 	_service = dict[@"service"];
 	_thumbnailURL = dict[@"thumbnail"];
 	_type = dict[@"type"];
+	_html = dict[@"html"];
 	
 	return self;
 }

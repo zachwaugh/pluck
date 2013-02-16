@@ -1,6 +1,6 @@
 //
-//  PLKYoutubeService.h
-//  Pluck
+//  PLKVimeoService.h
+//  PluckDemo
 //
 //  Created by Zach Waugh on 2/16/13.
 //  Copyright (c) 2013 Zach Waugh. All rights reserved.
@@ -8,6 +8,6 @@
 
 #import "PLKService.h"
 
-@interface PLKYoutubeService : PLKService
+@interface PLKVimeoService : PLKService
 
 @end
