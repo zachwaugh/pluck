@@ -1,0 +1,10 @@
+//
+// Prefix header for all source files of the 'PluckTests' target in the 'PluckDemo' project
+//
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#define EXP_SHORTHAND
+#import "Expecta.h"
+#define TEST_LIVE 0
+#endif

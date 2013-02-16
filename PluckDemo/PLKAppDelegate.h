@@ -11,5 +11,10 @@
 @interface PLKAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTextField *url;
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
+@property (weak) IBOutlet NSImageView *imageView;
+
+- (IBAction)fetchURL:(id)sender;
 
 @end
