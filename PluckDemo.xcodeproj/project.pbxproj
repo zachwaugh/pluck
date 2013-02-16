@@ -33,6 +33,9 @@
 		926EF77516D047E3004D8EE6 /* PLKVimeoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF77316D047E3004D8EE6 /* PLKVimeoService.m */; };
 		926EF77716D049DC004D8EE6 /* vimeo.json in Resources */ = {isa = PBXBuildFile; fileRef = 926EF77616D049DC004D8EE6 /* vimeo.json */; };
 		926EF77A16D049EB004D8EE6 /* PLKVimeoServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */; };
+		926EF78416D052A5004D8EE6 /* PLKInstagramService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78316D052A5004D8EE6 /* PLKInstagramService.m */; };
+		926EF78516D052A5004D8EE6 /* PLKInstagramService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78316D052A5004D8EE6 /* PLKInstagramService.m */; };
+		926EF78816D0539C004D8EE6 /* PLKInstagramServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -88,6 +91,10 @@
 		926EF77616D049DC004D8EE6 /* vimeo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vimeo.json; sourceTree = "<group>"; };
 		926EF77816D049EA004D8EE6 /* PLKVimeoServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKVimeoServiceTest.h; sourceTree = "<group>"; };
 		926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKVimeoServiceTest.m; sourceTree = "<group>"; };
+		926EF78216D052A4004D8EE6 /* PLKInstagramService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKInstagramService.h; sourceTree = "<group>"; };
+		926EF78316D052A5004D8EE6 /* PLKInstagramService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKInstagramService.m; sourceTree = "<group>"; };
+		926EF78616D0539B004D8EE6 /* PLKInstagramServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKInstagramServiceTest.h; sourceTree = "<group>"; };
+		926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKInstagramServiceTest.m; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -281,6 +288,8 @@
 				926EF77016D040B5004D8EE6 /* PLKFlickrServiceTest.m */,
 				926EF77816D049EA004D8EE6 /* PLKVimeoServiceTest.h */,
 				926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */,
+				926EF78616D0539B004D8EE6 /* PLKInstagramServiceTest.h */,
+				926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */,
 				92BCAF3A16D0175A006264DE /* Expecta */,
 				92BCAEF616D007C9006264DE /* Supporting Files */,
 			);
@@ -313,6 +322,8 @@
 				926EF76A16D03F15004D8EE6 /* PLKFlickrService.m */,
 				926EF77216D047E3004D8EE6 /* PLKVimeoService.h */,
 				926EF77316D047E3004D8EE6 /* PLKVimeoService.m */,
+				926EF78216D052A4004D8EE6 /* PLKInstagramService.h */,
+				926EF78316D052A5004D8EE6 /* PLKInstagramService.m */,
 				926EF74F16D024E0004D8EE6 /* NSURL+Pluck.h */,
 				926EF75016D024E0004D8EE6 /* NSURL+Pluck.m */,
 			);
@@ -530,6 +541,7 @@
 				926EF76116D03666004D8EE6 /* PLKYoutubeService.m in Sources */,
 				926EF76B16D03F15004D8EE6 /* PLKFlickrService.m in Sources */,
 				926EF77416D047E3004D8EE6 /* PLKVimeoService.m in Sources */,
+				926EF78416D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +567,8 @@
 				926EF77116D040B5004D8EE6 /* PLKFlickrServiceTest.m in Sources */,
 				926EF77516D047E3004D8EE6 /* PLKVimeoService.m in Sources */,
 				926EF77A16D049EB004D8EE6 /* PLKVimeoServiceTest.m in Sources */,
+				926EF78516D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
+				926EF78816D0539C004D8EE6 /* PLKInstagramServiceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

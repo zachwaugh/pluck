@@ -1,31 +1,31 @@
 //
-//  PLKVimeoService.m
-//  Pluck
+//  PLKInstagramService.m
+//  PluckDemo
 //
 //  Created by Zach Waugh on 2/16/13.
 //  Copyright (c) 2013 Zach Waugh. All rights reserved.
 //
 
-#import "PLKVimeoService.h"
+#import "PLKInstagramService.h"
 #import "PLKItem.h"
-#import "AFHTTPClient.h"
 #import "NSURL+Pluck.h"
+#import "AFHTTPClient.h"
 
-#define VIMEO_REGEX @"https?://.*vimeo\\.com/.*"
+#define INSTAGRAM_REGEX @"https?://.*instagr\\.am/.*"
 
-@implementation PLKVimeoService
+@implementation PLKInstagramService
 
 + (BOOL)isPluckableURL:(NSURL *)url
 {
-	return [url plk_isMatchedByRegex:VIMEO_REGEX];
+	return [url plk_isMatchedByRegex:INSTAGRAM_REGEX];
 }
 
 + (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
 {
-	AFHTTPClient *flickrClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://vimeo.com/"]];
+	AFHTTPClient *instagramClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.instagram.com/"]];
 	NSDictionary *params = @{ @"url": url.absoluteString};
 	
-	[flickrClient getPath:@"api/oembed.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+	[instagramClient getPath:@"oembed" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		NSError *error = nil;
 		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
 		
@@ -45,10 +45,8 @@
 	if (dict) {
 		return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],
-						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"html": dict[@"html"],
-						@"service": @"Vimeo",
+						@"url": [NSURL URLWithString:dict[@"url"]],
+						@"service": dict[@"provider_name"],
 						@"title": dict[@"title"]
 						}];
 	}

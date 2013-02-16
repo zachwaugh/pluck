@@ -2,7 +2,7 @@
 
 Pluck is an Objective-C OEmbed-ish library to support embedding images from URLs. This library isn't concerned with a particular standard, but whatever works including OEmbed, Open Graph, or if a service supports their own representation. It will fetch the data and return a standardized representation.
 
-Pluck is in early stages of development and the API may change until 1.0.
+Pluck is in early stages of development and the API may change until 1.0. This is currently geared toward the use case of display images from a service, but can be extended.
 
 ## Installation
 
