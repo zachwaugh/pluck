@@ -10,7 +10,7 @@
 
 @interface PLKCloudAppServiceTest : SenTestCase
 
-- (void)testIsPluckableURL;
+- (void)testIsSupportedURL;
 - (void)testItemFromDictionary;
 
 #if TEST_LIVE

@@ -15,7 +15,7 @@
 
 @implementation PLKCloudAppService
 
-+ (BOOL)isPluckableURL:(NSURL *)url
++ (BOOL)isSupportedURL:(NSURL *)url
 {
 	return (url && [url plk_isMatchedByRegex:CLOUDAPP_REGEX]);
 }

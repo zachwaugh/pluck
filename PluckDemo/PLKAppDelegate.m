@@ -21,7 +21,7 @@
 {
 	NSURL *url = [NSURL URLWithString:self.url.stringValue];
 	
-	if (url && [PLKService isPluckableURL:url]) {
+	if (url && [PLKService isSupportedURL:url]) {
 		[PLKService itemForURL:url block:^(PLKItem *item, NSError *error) {
 			if (item) {
 				self.imageView.image = [[NSImage alloc] initWithContentsOfURL:item.url];
@@ -30,6 +30,8 @@
 				self.textView.string = error.localizedDescription;
 			}
 		}];
+	} else {
+		NSLog(@"unsupported url: %@", url);
 	}
 }
 

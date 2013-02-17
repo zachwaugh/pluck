@@ -21,7 +21,7 @@ enum {
 
 + (NSArray *)services;
 
-+ (BOOL)isPluckableURL:(NSURL *)url;
++ (BOOL)isSupportedURL:(NSURL *)url;
 + (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *item, NSError *error))block;
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dictionary;
 

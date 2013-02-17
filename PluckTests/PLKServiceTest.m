@@ -11,13 +11,14 @@
 
 @implementation PLKServiceTest
 
-- (void)testIsPluckable
+- (void)testIsSupportedURL
 {
-	expect([PLKService isPluckableURL:nil]).to.beFalsy();
-	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://cl.ly/AJbz"]]).to.beTruthy();
-	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://www.youtube.com/watch?v=90Omh7_I8vI"]]).to.beTruthy();
-	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://flic.kr/p/8yKma5"]]).to.beTruthy();
-	expect([PLKService isPluckableURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:nil]).to.beFalsy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://cl.ly/AJbz"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://www.youtube.com/watch?v=90Omh7_I8vI"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://flic.kr/p/8yKma5"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://instagram.com/p/U6OD6Dq5LB/"]]).to.beTruthy();
 }
 
 - (void)testItemForURL

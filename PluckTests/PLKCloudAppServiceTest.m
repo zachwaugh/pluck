@@ -12,13 +12,13 @@
 
 @implementation PLKCloudAppServiceTest
 
-- (void)testIsPluckableURL
+- (void)testIsSupportedURL
 {
-	expect([PLKCloudAppService isPluckableURL:[NSURL URLWithString:@"http://cl.ly/AJbz"]]).to.beTruthy();
-	expect([PLKCloudAppService isPluckableURL:[NSURL URLWithString:@"http://cl.ly/image/0w2V3j0s010X"]]).to.beTruthy();
+	expect([PLKCloudAppService isSupportedURL:[NSURL URLWithString:@"http://cl.ly/AJbz"]]).to.beTruthy();
+	expect([PLKCloudAppService isSupportedURL:[NSURL URLWithString:@"http://cl.ly/image/0w2V3j0s010X"]]).to.beTruthy();
 	
-	expect([PLKCloudAppService isPluckableURL:[NSURL URLWithString:@"http://zdw.me/232343"]]).to.beFalsy();
-	expect([PLKCloudAppService isPluckableURL:[NSURL URLWithString:@"http://vapor.ly/image/0w2V3j0s010X"]]).to.beFalsy();
+	expect([PLKCloudAppService isSupportedURL:[NSURL URLWithString:@"http://zdw.me/232343"]]).to.beFalsy();
+	expect([PLKCloudAppService isSupportedURL:[NSURL URLWithString:@"http://vapor.ly/image/0w2V3j0s010X"]]).to.beFalsy();
 }
 
 - (void)testItemFromDictionary

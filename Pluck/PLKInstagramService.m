@@ -11,11 +11,11 @@
 #import "NSURL+Pluck.h"
 #import "AFHTTPClient.h"
 
-#define INSTAGRAM_REGEX @"https?://.*instagr\\.am/.*"
+#define INSTAGRAM_REGEX @"https?://.*(instagram\\.com|instagr\\.am)/.*"
 
 @implementation PLKInstagramService
 
-+ (BOOL)isPluckableURL:(NSURL *)url
++ (BOOL)isSupportedURL:(NSURL *)url
 {
 	return [url plk_isMatchedByRegex:INSTAGRAM_REGEX];
 }

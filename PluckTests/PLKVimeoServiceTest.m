@@ -12,13 +12,13 @@
 
 @implementation PLKVimeoServiceTest
 
-- (void)testIsPluckableURL
+- (void)testIsSupportedURL
 {
-	expect([PLKVimeoService isPluckableURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
+	expect([PLKVimeoService isSupportedURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
 	
-	expect([PLKVimeoService isPluckableURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
-	expect([PLKVimeoService isPluckableURL:[NSURL URLWithString:@"http://google.com"]]).to.beFalsy();
-	expect([PLKVimeoService isPluckableURL:[NSURL URLWithString:@"http://google.com/youtube"]]).to.beFalsy();
+	expect([PLKVimeoService isSupportedURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
+	expect([PLKVimeoService isSupportedURL:[NSURL URLWithString:@"http://google.com"]]).to.beFalsy();
+	expect([PLKVimeoService isSupportedURL:[NSURL URLWithString:@"http://google.com/youtube"]]).to.beFalsy();
 }
 
 - (void)testItemFromDictionary

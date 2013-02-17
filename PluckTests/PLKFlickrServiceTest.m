@@ -12,14 +12,14 @@
 
 @implementation PLKFlickrServiceTest
 
-- (void)testIsPluckableURL
+- (void)testIsSupportedURL
 {
-	expect([PLKFlickrService isPluckableURL:[NSURL URLWithString:@"http://www.flickr.com/photos/zwaugh/4965082870/in/photostream"]]).to.beTruthy();
-	expect([PLKFlickrService isPluckableURL:[NSURL URLWithString:@"http://flic.kr/p/8yKma5"]]).to.beTruthy();
+	expect([PLKFlickrService isSupportedURL:[NSURL URLWithString:@"http://www.flickr.com/photos/zwaugh/4965082870/in/photostream"]]).to.beTruthy();
+	expect([PLKFlickrService isSupportedURL:[NSURL URLWithString:@"http://flic.kr/p/8yKma5"]]).to.beTruthy();
 	
-	expect([PLKFlickrService isPluckableURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
-	expect([PLKFlickrService isPluckableURL:[NSURL URLWithString:@"http://google.com"]]).to.beFalsy();
-	expect([PLKFlickrService isPluckableURL:[NSURL URLWithString:@"http://google.com/youtube"]]).to.beFalsy();
+	expect([PLKFlickrService isSupportedURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
+	expect([PLKFlickrService isSupportedURL:[NSURL URLWithString:@"http://google.com"]]).to.beFalsy();
+	expect([PLKFlickrService isSupportedURL:[NSURL URLWithString:@"http://google.com/youtube"]]).to.beFalsy();
 }
 
 - (void)testItemFromDictionary

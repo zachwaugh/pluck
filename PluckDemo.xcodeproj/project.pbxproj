@@ -36,6 +36,7 @@
 		926EF78416D052A5004D8EE6 /* PLKInstagramService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78316D052A5004D8EE6 /* PLKInstagramService.m */; };
 		926EF78516D052A5004D8EE6 /* PLKInstagramService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78316D052A5004D8EE6 /* PLKInstagramService.m */; };
 		926EF78816D0539C004D8EE6 /* PLKInstagramServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */; };
+		926EF79116D18295004D8EE6 /* instagram.json in Resources */ = {isa = PBXBuildFile; fileRef = 926EF79016D18295004D8EE6 /* instagram.json */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -95,6 +96,7 @@
 		926EF78316D052A5004D8EE6 /* PLKInstagramService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKInstagramService.m; sourceTree = "<group>"; };
 		926EF78616D0539B004D8EE6 /* PLKInstagramServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKInstagramServiceTest.h; sourceTree = "<group>"; };
 		926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKInstagramServiceTest.m; sourceTree = "<group>"; };
+		926EF79016D18295004D8EE6 /* instagram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = instagram.json; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -199,6 +201,7 @@
 		926EF75C16D033D8004D8EE6 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				926EF79016D18295004D8EE6 /* instagram.json */,
 				926EF77616D049DC004D8EE6 /* vimeo.json */,
 				926EF76D16D040A7004D8EE6 /* flickr.json */,
 				926EF76616D03796004D8EE6 /* youtube.json */,
@@ -497,6 +500,7 @@
 				926EF76716D03796004D8EE6 /* youtube.json in Resources */,
 				926EF76E16D040A7004D8EE6 /* flickr.json in Resources */,
 				926EF77716D049DC004D8EE6 /* vimeo.json in Resources */,
+				926EF79116D18295004D8EE6 /* instagram.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

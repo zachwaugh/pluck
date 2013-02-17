@@ -10,4 +10,11 @@
 
 @interface PLKInstagramServiceTest : SenTestCase
 
+- (void)testIsSupportedURL;
+- (void)testItemFromDictionary;
+
+#if TEST_LIVE
+- (void)testLiveItemForURL;
+#endif
+
 @end

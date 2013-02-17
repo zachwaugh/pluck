@@ -12,14 +12,14 @@
 
 @implementation PLKYoutubeServiceTest
 
-- (void)testIsPluckableURL
+- (void)testIsSupportedURL
 {
-	expect([PLKYoutubeService isPluckableURL:[NSURL URLWithString:@"http://www.youtube.com/watch?v=90Omh7_I8vI"]]).to.beTruthy();
-	expect([PLKYoutubeService isPluckableURL:[NSURL URLWithString:@"http://youtu.be/ckfBGdZoR_0"]]).to.beTruthy();
+	expect([PLKYoutubeService isSupportedURL:[NSURL URLWithString:@"http://www.youtube.com/watch?v=90Omh7_I8vI"]]).to.beTruthy();
+	expect([PLKYoutubeService isSupportedURL:[NSURL URLWithString:@"http://youtu.be/ckfBGdZoR_0"]]).to.beTruthy();
 	
-	expect([PLKYoutubeService isPluckableURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
-	expect([PLKYoutubeService isPluckableURL:[NSURL URLWithString:@"http://google.com"]]).to.beFalsy();
-	expect([PLKYoutubeService isPluckableURL:[NSURL URLWithString:@"http://google.com/youtube"]]).to.beFalsy();
+	expect([PLKYoutubeService isSupportedURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
+	expect([PLKYoutubeService isSupportedURL:[NSURL URLWithString:@"http://google.com"]]).to.beFalsy();
+	expect([PLKYoutubeService isSupportedURL:[NSURL URLWithString:@"http://google.com/youtube"]]).to.beFalsy();
 }
 
 - (void)testItemFromDictionary

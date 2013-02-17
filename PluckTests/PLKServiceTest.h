@@ -10,7 +10,7 @@
 
 @interface PLKServiceTest : SenTestCase
 
-- (void)testIsPluckable;
+- (void)testIsSupportedURL;
 - (void)testItemForURL;
 
 @end

@@ -11,6 +11,7 @@
 #import "PLKYoutubeService.h"
 #import "PLKFlickrService.h"
 #import "PLKVimeoService.h"
+#import "PLKInstagramService.h"
 
 NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 
@@ -21,17 +22,17 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	static NSArray *_services = nil;
 	if (!_services) {
 		// All services enabled by default - may add option to modify in the future
-		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class]];
+		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class]];
 	}
 	
 	return _services;
 }
 
-+ (BOOL)isPluckableURL:(NSURL *)url
++ (BOOL)isSupportedURL:(NSURL *)url
 {
 	// Check all service classes to find a service that can support this URL
 	for (Class class in self.services) {
-		if ([class isPluckableURL:url]) {
+		if ([class isSupportedURL:url]) {
 			return YES;
 		}
 	}
@@ -44,7 +45,7 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	Class serviceClass = nil;
 	
 	for (Class class in self.services) {
-		if ([class isPluckableURL:url]) {
+		if ([class isSupportedURL:url]) {
 			serviceClass = class;
 		}
 	}

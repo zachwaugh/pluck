@@ -16,7 +16,7 @@
 
 @implementation PLKYoutubeService
 
-+ (BOOL)isPluckableURL:(NSURL *)url
++ (BOOL)isSupportedURL:(NSURL *)url
 {
 	return [url plk_isMatchedByRegex:YOUTUBE_REGEX];
 }
