@@ -37,6 +37,8 @@
 		926EF78516D052A5004D8EE6 /* PLKInstagramService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78316D052A5004D8EE6 /* PLKInstagramService.m */; };
 		926EF78816D0539C004D8EE6 /* PLKInstagramServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */; };
 		926EF79116D18295004D8EE6 /* instagram.json in Resources */ = {isa = PBXBuildFile; fileRef = 926EF79016D18295004D8EE6 /* instagram.json */; };
+		926EF79416D196FF004D8EE6 /* PLKOEmbedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */; };
+		926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -97,6 +99,9 @@
 		926EF78616D0539B004D8EE6 /* PLKInstagramServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKInstagramServiceTest.h; sourceTree = "<group>"; };
 		926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKInstagramServiceTest.m; sourceTree = "<group>"; };
 		926EF79016D18295004D8EE6 /* instagram.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = instagram.json; sourceTree = "<group>"; };
+		926EF79216D196FE004D8EE6 /* PLKOEmbedService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKOEmbedService.h; sourceTree = "<group>"; };
+		926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKOEmbedService.m; sourceTree = "<group>"; };
+		926EF79616D1972A004D8EE6 /* Pluck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pluck.h; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -313,10 +318,13 @@
 		92BCAF0616D007DB006264DE /* Pluck */ = {
 			isa = PBXGroup;
 			children = (
+				926EF79616D1972A004D8EE6 /* Pluck.h */,
 				92BCAF3416D0165C006264DE /* PLKItem.h */,
 				92BCAF3516D0165C006264DE /* PLKItem.m */,
 				926EF73B16D02256004D8EE6 /* PLKService.h */,
 				926EF73C16D02256004D8EE6 /* PLKService.m */,
+				926EF79216D196FE004D8EE6 /* PLKOEmbedService.h */,
+				926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */,
 				926EF74B16D02440004D8EE6 /* PLKCloudAppService.h */,
 				926EF74C16D02440004D8EE6 /* PLKCloudAppService.m */,
 				926EF75F16D03666004D8EE6 /* PLKYoutubeService.h */,
@@ -546,6 +554,7 @@
 				926EF76B16D03F15004D8EE6 /* PLKFlickrService.m in Sources */,
 				926EF77416D047E3004D8EE6 /* PLKVimeoService.m in Sources */,
 				926EF78416D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
+				926EF79416D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +582,7 @@
 				926EF77A16D049EB004D8EE6 /* PLKVimeoServiceTest.m in Sources */,
 				926EF78516D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
 				926EF78816D0539C004D8EE6 /* PLKInstagramServiceTest.m in Sources */,
+				926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

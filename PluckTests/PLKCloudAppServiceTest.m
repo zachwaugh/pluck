@@ -35,7 +35,7 @@
 	
 	PLKItem *item = [PLKCloudAppService itemFromDictionary:dict];
 	expect(item).toNot.beNil();	
-	expect(item.type).to.equal(@"image");
+	expect(item.type).to.equal(@"photo");
 	expect(item.service).to.equal(@"CloudApp");
 	expect(item.title).to.equal(@"Screen Shot 2013-02-15 at 3.41.57 PM.png");
 	expect(item.url).to.equal(contentURL);

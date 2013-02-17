@@ -21,38 +21,24 @@
 	return [url plk_isMatchedByRegex:YOUTUBE_REGEX];
 }
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
++ (NSURL *)oEmbedBaseURL
 {
-	AFHTTPClient *youtubeClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.youtube.com/"]];
-	
-	NSDictionary *params = @{ @"url": url.absoluteString, @"format": @"json" };
-	
-	[youtubeClient getPath:@"oembed" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSError *error = nil;
-		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
-		
-		if (error) {
-			NSLog(@"error creating json from response: %@", error);
-		}
-		
-		NSLog(@"youtube response: %@", dict);
-		
-		PLKItem *item = [self itemFromDictionary:dict];
-		
-		if (block) block(item, nil);
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		if (block) block(nil, error);
-	}];
+	return [NSURL URLWithString:@"http://www.youtube.com/oembed"];
+}
+
++ (NSDictionary *)oEmbedParamsForURL:(NSURL *)url
+{
+	return @{ @"url": url.absoluteString, @"format": @"json" };
 }
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
 	if (dict) {
 		return [PLKItem itemWithDictionary:@{
-						@"type": @"video",
+						@"type": dict[@"type"],
 						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
 						@"html": dict[@"html"],
-						@"service": @"YouTube",
+						@"service": dict[@"provider_name"],
 						@"title": dict[@"title"]
 					 }];
 	}

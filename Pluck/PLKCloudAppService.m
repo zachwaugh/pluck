@@ -43,7 +43,7 @@
 	if ([dict[@"item_type"] isEqualToString:@"image"]) {
 		return [PLKItem itemWithDictionary:@{
 						@"url": [NSURL URLWithString:dict[@"content_url"]],
-						@"type": @"image",
+						@"type": @"photo",
 						@"service": @"CloudApp",
 						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
 						@"title": dict[@"name"]

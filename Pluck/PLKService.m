@@ -20,18 +20,22 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 + (NSArray *)services
 {
 	static NSArray *_services = nil;
-	if (!_services) {
-		// All services enabled by default - may add option to modify in the future
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
 		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class]];
-	}
+	});
 	
 	return _services;
 }
 
 + (BOOL)isSupportedURL:(NSURL *)url
 {
-	// Check all service classes to find a service that can support this URL
-	for (Class class in self.services) {
+	return [self isSupportedURL:url services:[self services]];
+}
+
++ (BOOL)isSupportedURL:(NSURL *)url services:(NSArray *)services
+{
+	for (Class class in services) {
 		if ([class isSupportedURL:url]) {
 			return YES;
 		}
@@ -47,13 +51,14 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	for (Class class in self.services) {
 		if ([class isSupportedURL:url]) {
 			serviceClass = class;
+			break;
 		}
 	}
 	
 	if (serviceClass) {
 		[serviceClass itemForURL:url block:block];
 	} else {
-		// No service found - return unsupported URL error
+		// No service found that supports this URL - return unsupported URL error
 		NSError *error = [NSError errorWithDomain:PLKErrorDomain code:PLKErrorUnsupportedURL userInfo:nil];
 		if (block) block(nil, error);
 	}

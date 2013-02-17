@@ -20,25 +20,14 @@
 	return [url plk_isMatchedByRegex:FLICKR_REGEX];
 }
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
++ (NSURL *)oEmbedBaseURL
 {
-	AFHTTPClient *flickrClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.flickr.com/"]];
-	NSDictionary *params = @{ @"url": url.absoluteString, @"format": @"json" };
-	
-	[flickrClient getPath:@"services/oembed/" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSError *error = nil;
-		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
-		
-		if (error) {
-			NSLog(@"error creating json from response: %@", error);
-		}
-				
-		PLKItem *item = [self itemFromDictionary:dict];
-		
-		if (block) block(item, nil);
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		if (block) block(nil, error);
-	}];
+	return [NSURL URLWithString:@"http://www.flickr.com/services/oembed"];
+}
+
++ (NSDictionary *)oEmbedParamsForURL:(NSURL *)url
+{
+	return @{ @"url": url.absoluteString, @"format": @"json" };
 }
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
@@ -48,7 +37,7 @@
 						@"type": dict[@"type"],
 						@"url": [NSURL URLWithString:dict[@"url"]],
 						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"service": @"Flickr",
+						@"service": dict[@"provider_name"],
 						@"title": dict[@"title"]
 						}];
 	}

@@ -7,8 +7,7 @@
 //
 
 #import "PLKAppDelegate.h"
-#import "PLKService.h"
-#import "PLKItem.h"
+#import "Pluck.h"
 
 @implementation PLKAppDelegate
 

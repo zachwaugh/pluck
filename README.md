@@ -1,12 +1,12 @@
 # Pluck
 
-Pluck is an Objective-C OEmbed-ish library to support embedding images from URLs. This library isn't concerned with a particular standard, but whatever works including OEmbed, Open Graph, or if a service supports their own representation. It will fetch the data and return a standardized representation.
+Pluck is an Objective-C library for grabbing content from OEmbed-ish  to support embedding images from URLs. This library isn't concerned with a particular standard, but whatever works including OEmbed, Open Graph, or if a service supports their own format. It will fetch the data and return a standardized representation.
 
-Pluck is in early stages of development and the API may change until 1.0. This is currently geared toward the use case of display images from a service, but can be extended.
+Pluck is in early stages of development and the API may change until 1.0. This is currently geared toward the use case of display images from a service in a client app (i.e. [Flint](http://giantcomet.com/flint)), but can be extended.
 
 ## Installation
 
-Pluck is available via CocoaPods, but you can also install it directly. The only dependency is AFNetworking 1.1 or later. Pluck requires ARC.
+Pluck is available via CocoaPods, but you can also install it directly. Pluck requires ARC and AFNetworking. 
 
 ## Usage
 
@@ -18,24 +18,22 @@ This is the primary method. It will figure out which service supports the URL, f
 ## Services
 
 Pluck currently supports:
-
 - CloudApp
 - YouTube
+- Vimeo
 - Flickr
+- Instagram
 
 Support is planned for:
-- Vimeo
 - Twitter
-- Instagram
 - Dribbble
 - ADN
-- OpenGraph
 
 ## Extending
 
 Pluck services are based on the `PLKService` class. To add another service, subclass `PLKService` and add support for these three class methods:
 
-- `+ (BOOL)isPluckableURL:(NSURL *)url`
+- `+ (BOOL)isSupportedURL:(NSURL *)url`
 - `+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *item, NSError *error))block`
 - `+ (PLKItem *)itemFromDictionary:(NSDictionary *)dictionary`
 

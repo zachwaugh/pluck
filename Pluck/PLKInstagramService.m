@@ -9,7 +9,6 @@
 #import "PLKInstagramService.h"
 #import "PLKItem.h"
 #import "NSURL+Pluck.h"
-#import "AFHTTPClient.h"
 
 #define INSTAGRAM_REGEX @"https?://.*(instagram\\.com|instagr\\.am)/.*"
 
@@ -20,38 +19,14 @@
 	return [url plk_isMatchedByRegex:INSTAGRAM_REGEX];
 }
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
++ (NSDictionary *)oEmbedParamsForURL:(NSURL *)url
 {
-	AFHTTPClient *instagramClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.instagram.com/"]];
-	NSDictionary *params = @{ @"url": url.absoluteString};
-	
-	[instagramClient getPath:@"oembed" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSError *error = nil;
-		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
-		
-		if (error) {
-			NSLog(@"error creating json from response: %@", error);
-		}
-		
-		PLKItem *item = [self itemFromDictionary:dict];
-		if (block) block(item, nil);
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		if (block) block(nil, error);
-	}];
+	return @{ @"url": url.absoluteString };
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (NSURL *)oEmbedBaseURL
 {
-	if (dict) {
-		return [PLKItem itemWithDictionary:@{
-						@"type": dict[@"type"],
-						@"url": [NSURL URLWithString:dict[@"url"]],
-						@"service": dict[@"provider_name"],
-						@"title": dict[@"title"]
-						}];
-	}
-	
-	return nil;
+	return [NSURL URLWithString:@"http://api.instagram.com/oembed"];
 }
 
 @end
