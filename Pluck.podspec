@@ -8,5 +8,5 @@ Pod::Spec.new do |s|
   s.source       = {:git => 'https://github.com/zachwaugh/pluck.git'}
   s.source_files = 'Pluck/*.{h,m}'
   s.requires_arc = true
-  s.dependency = 'AFNetworking'
+  s.dependency 'AFNetworking'
 end
