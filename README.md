@@ -1,6 +1,6 @@
 # Pluck
 
-Pluck is an Objective-C library for grabbing content from OEmbed-ish  to support embedding images from URLs. This library isn't concerned with a particular standard, but whatever works including OEmbed, Open Graph, or if a service supports their own format. It will fetch the data and return a standardized representation.
+Pluck is an Objective-C library for grabbing content from OEmbed (and similar) supporting sites. This library isn't concerned with a particular standard, but whatever works including OEmbed, Open Graph, Twitter Cards, or if a service supports their own format. It will fetch the data and return a standardized representation.
 
 Pluck is in early stages of development and the API may change until 1.0. This is currently geared toward the use case of display images from a service in a client app (i.e. [Flint](http://giantcomet.com/flint)), but can be extended.
 
@@ -15,6 +15,11 @@ Pluck is available via CocoaPods, but you can also install it directly. Pluck re
 This is the primary method. It will figure out which service supports the URL, fetch it and return a `PLKItem`. You can also call the same method on any service directly.
 
 
+## Demo
+
+There is a PluckDemo project that has a demo Mac app for entering a URL and returning the data and image. The Xcode project also contains the tests.
+
+
 ## Services
 
 Pluck currently supports:
@@ -23,11 +28,12 @@ Pluck currently supports:
 - Vimeo
 - Flickr
 - Instagram
+- Dribbble (doesn't yet support short urls)
 
 Support is planned for:
 - Twitter
-- Dribbble
 - ADN
+- Vine
 
 ## Extending
 
