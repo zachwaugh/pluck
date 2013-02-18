@@ -33,7 +33,6 @@
 		PLKItem *item = nil;
 		
 		if (!error) {
-			NSLog(@"oEmbed response: %@", dict);
 			item = [self itemFromDictionary:dict];
 		} else {
 			NSLog(@"error creating json from response: %@", error);

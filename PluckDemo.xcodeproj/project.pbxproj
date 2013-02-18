@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9256F1DE16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256F1DD16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m */; };
+		9256F1E116D2DF4600E96DA3 /* PLKDribbbleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256F1E016D2DF4600E96DA3 /* PLKDribbbleService.m */; };
+		9256F1E316D2DFCD00E96DA3 /* dribbble.json in Resources */ = {isa = PBXBuildFile; fileRef = 9256F1E216D2DFCD00E96DA3 /* dribbble.json */; };
+		9256F1E416D2E05400E96DA3 /* PLKDribbbleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256F1E016D2DF4600E96DA3 /* PLKDribbbleService.m */; };
 		926EF73D16D02256004D8EE6 /* PLKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF73C16D02256004D8EE6 /* PLKService.m */; };
 		926EF73E16D02256004D8EE6 /* PLKService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF73C16D02256004D8EE6 /* PLKService.m */; };
 		926EF74A16D023E2004D8EE6 /* PLKServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF74916D023E2004D8EE6 /* PLKServiceTest.m */; };
@@ -66,6 +70,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9256F1DC16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKDribbbleServiceTest.h; sourceTree = "<group>"; };
+		9256F1DD16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKDribbbleServiceTest.m; sourceTree = "<group>"; };
+		9256F1DF16D2DF4600E96DA3 /* PLKDribbbleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKDribbbleService.h; sourceTree = "<group>"; };
+		9256F1E016D2DF4600E96DA3 /* PLKDribbbleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKDribbbleService.m; sourceTree = "<group>"; };
+		9256F1E216D2DFCD00E96DA3 /* dribbble.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dribbble.json; sourceTree = "<group>"; };
 		926EF73B16D02256004D8EE6 /* PLKService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKService.h; sourceTree = "<group>"; };
 		926EF73C16D02256004D8EE6 /* PLKService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKService.m; sourceTree = "<group>"; };
 		926EF74816D023E2004D8EE6 /* PLKServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKServiceTest.h; sourceTree = "<group>"; };
@@ -211,6 +220,7 @@
 				926EF76D16D040A7004D8EE6 /* flickr.json */,
 				926EF76616D03796004D8EE6 /* youtube.json */,
 				926EF75D16D033D8004D8EE6 /* cloudapp.json */,
+				9256F1E216D2DFCD00E96DA3 /* dribbble.json */,
 			);
 			path = fixtures;
 			sourceTree = "<group>";
@@ -298,6 +308,8 @@
 				926EF77916D049EA004D8EE6 /* PLKVimeoServiceTest.m */,
 				926EF78616D0539B004D8EE6 /* PLKInstagramServiceTest.h */,
 				926EF78716D0539C004D8EE6 /* PLKInstagramServiceTest.m */,
+				9256F1DC16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.h */,
+				9256F1DD16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m */,
 				92BCAF3A16D0175A006264DE /* Expecta */,
 				92BCAEF616D007C9006264DE /* Supporting Files */,
 			);
@@ -335,6 +347,8 @@
 				926EF77316D047E3004D8EE6 /* PLKVimeoService.m */,
 				926EF78216D052A4004D8EE6 /* PLKInstagramService.h */,
 				926EF78316D052A5004D8EE6 /* PLKInstagramService.m */,
+				9256F1DF16D2DF4600E96DA3 /* PLKDribbbleService.h */,
+				9256F1E016D2DF4600E96DA3 /* PLKDribbbleService.m */,
 				926EF74F16D024E0004D8EE6 /* NSURL+Pluck.h */,
 				926EF75016D024E0004D8EE6 /* NSURL+Pluck.m */,
 			);
@@ -509,6 +523,7 @@
 				926EF76E16D040A7004D8EE6 /* flickr.json in Resources */,
 				926EF77716D049DC004D8EE6 /* vimeo.json in Resources */,
 				926EF79116D18295004D8EE6 /* instagram.json in Resources */,
+				9256F1E316D2DFCD00E96DA3 /* dribbble.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +570,7 @@
 				926EF77416D047E3004D8EE6 /* PLKVimeoService.m in Sources */,
 				926EF78416D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
 				926EF79416D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
+				9256F1E116D2DF4600E96DA3 /* PLKDribbbleService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +599,8 @@
 				926EF78516D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
 				926EF78816D0539C004D8EE6 /* PLKInstagramServiceTest.m in Sources */,
 				926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
+				9256F1DE16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m in Sources */,
+				9256F1E416D2E05400E96DA3 /* PLKDribbbleService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

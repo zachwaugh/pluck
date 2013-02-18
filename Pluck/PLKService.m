@@ -12,6 +12,7 @@
 #import "PLKFlickrService.h"
 #import "PLKVimeoService.h"
 #import "PLKInstagramService.h"
+#import "PLKDribbbleService.h"
 
 NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 
@@ -22,7 +23,7 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	static NSArray *_services = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class]];
+		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class], [PLKDribbbleService class]];
 	});
 	
 	return _services;

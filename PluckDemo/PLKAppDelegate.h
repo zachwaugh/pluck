@@ -14,6 +14,7 @@
 @property (weak) IBOutlet NSTextField *url;
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 @property (weak) IBOutlet NSImageView *imageView;
+@property (assign) BOOL loading;
 
 - (IBAction)fetchURL:(id)sender;
 

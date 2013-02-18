@@ -21,16 +21,19 @@
 	NSURL *url = [NSURL URLWithString:self.url.stringValue];
 	
 	if (url && [PLKService isSupportedURL:url]) {
+    self.loading = YES;
 		[PLKService itemForURL:url block:^(PLKItem *item, NSError *error) {
 			if (item) {
 				self.imageView.image = [[NSImage alloc] initWithContentsOfURL:item.url];
-				self.textView.string = item.description;
+				self.textView.string = [[item.description componentsSeparatedByString:@", "] componentsJoinedByString:@"\n"];
 			} else {
 				self.textView.string = error.localizedDescription;
 			}
+      
+      self.loading = NO;
 		}];
 	} else {
-		NSLog(@"unsupported url: %@", url);
+		self.textView.string = [NSString stringWithFormat:@"Unsupported url: %@", url];
 	}
 }
 

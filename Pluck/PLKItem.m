@@ -32,7 +32,7 @@
 
 - (NSString *)description
 {
-	return [NSString stringWithFormat:@"title: %@, url: %@, thumbnail: %@, type: %@", self.title, self.url, self.thumbnailURL, self.type];
+	return [NSString stringWithFormat:@"title: %@, url: %@, thumbnail: %@, type: %@, service: %@", self.title, self.url, self.thumbnailURL, self.type, self.service];
 }
 
 @end

@@ -19,6 +19,7 @@
 	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://flic.kr/p/8yKma5"]]).to.beTruthy();
 	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
 	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://instagram.com/p/U6OD6Dq5LB/"]]).to.beTruthy();
+  expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint"]]).to.beTruthy();
 }
 
 - (void)testItemForURL
