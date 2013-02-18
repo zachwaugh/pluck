@@ -28,7 +28,7 @@ Pluck currently supports:
 - Vimeo
 - Flickr
 - Instagram
-- Dribbble (doesn't yet support short urls)
+- Dribbble
 
 Support is planned for:
 - Twitter

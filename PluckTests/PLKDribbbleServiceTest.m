@@ -21,7 +21,7 @@
 - (void)testIsSupportedURL
 {
 	expect([PLKDribbbleService isSupportedURL:[NSURL URLWithString:@"http://dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint"]]).to.beTruthy();
-	expect([PLKDribbbleService isSupportedURL:[NSURL URLWithString:@"http://drbl.in/gGuj"]]).to.beFalsy(); // short urls not supported yet
+	expect([PLKDribbbleService isSupportedURL:[NSURL URLWithString:@"http://drbl.in/gGuj"]]).to.beTruthy();
 	
   expect([PLKDribbbleService isSupportedURL:[NSURL URLWithString:@"http://instagram.com/p/foo"]]).to.beFalsy();
 	expect([PLKDribbbleService isSupportedURL:[NSURL URLWithString:@"http://example.com/foo"]]).to.beFalsy();
