@@ -43,6 +43,16 @@
 		926EF79116D18295004D8EE6 /* instagram.json in Resources */ = {isa = PBXBuildFile; fileRef = 926EF79016D18295004D8EE6 /* instagram.json */; };
 		926EF79416D196FF004D8EE6 /* PLKOEmbedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */; };
 		926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */; };
+		926EF7C716D32F17004D8EE6 /* PLKOpenGraphService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7C616D32F17004D8EE6 /* PLKOpenGraphService.m */; };
+		926EF7CB16D32F2E004D8EE6 /* PLKTwitterCardsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */; };
+		926EF7CD16D32FCB004D8EE6 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */; };
+		926EF7D516D3302F004D8EE6 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D016D3302F004D8EE6 /* TFHpple.m */; };
+		926EF7D616D3302F004D8EE6 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D016D3302F004D8EE6 /* TFHpple.m */; };
+		926EF7D716D3302F004D8EE6 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D216D3302F004D8EE6 /* TFHppleElement.m */; };
+		926EF7D816D3302F004D8EE6 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D216D3302F004D8EE6 /* TFHppleElement.m */; };
+		926EF7D916D3302F004D8EE6 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D416D3302F004D8EE6 /* XPathQuery.m */; };
+		926EF7DA16D3302F004D8EE6 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D416D3302F004D8EE6 /* XPathQuery.m */; };
+		926EF7F016D33AEB004D8EE6 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -111,6 +121,17 @@
 		926EF79216D196FE004D8EE6 /* PLKOEmbedService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKOEmbedService.h; sourceTree = "<group>"; };
 		926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKOEmbedService.m; sourceTree = "<group>"; };
 		926EF79616D1972A004D8EE6 /* Pluck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pluck.h; sourceTree = "<group>"; };
+		926EF7C516D32F17004D8EE6 /* PLKOpenGraphService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKOpenGraphService.h; sourceTree = "<group>"; };
+		926EF7C616D32F17004D8EE6 /* PLKOpenGraphService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKOpenGraphService.m; sourceTree = "<group>"; };
+		926EF7C916D32F2E004D8EE6 /* PLKTwitterCardsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKTwitterCardsService.h; sourceTree = "<group>"; };
+		926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKTwitterCardsService.m; sourceTree = "<group>"; };
+		926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		926EF7CF16D3302F004D8EE6 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = vendor/hpple/TFHpple.h; sourceTree = "<group>"; };
+		926EF7D016D3302F004D8EE6 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = vendor/hpple/TFHpple.m; sourceTree = "<group>"; };
+		926EF7D116D3302F004D8EE6 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = vendor/hpple/TFHppleElement.h; sourceTree = "<group>"; };
+		926EF7D216D3302F004D8EE6 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = vendor/hpple/TFHppleElement.m; sourceTree = "<group>"; };
+		926EF7D316D3302F004D8EE6 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = vendor/hpple/XPathQuery.h; sourceTree = "<group>"; };
+		926EF7D416D3302F004D8EE6 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = vendor/hpple/XPathQuery.m; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -195,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926EF7CD16D32FCB004D8EE6 /* libxml2.2.dylib in Frameworks */,
 				92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926EF7F016D33AEB004D8EE6 /* libxml2.2.dylib in Frameworks */,
 				92BCAEF116D007C9006264DE /* SenTestingKit.framework in Frameworks */,
 				92BCAEF216D007C9006264DE /* Cocoa.framework in Frameworks */,
 				92BCAF5F16D0179D006264DE /* libExpecta-macosx.a in Frameworks */,
@@ -223,6 +246,19 @@
 				9256F1E216D2DFCD00E96DA3 /* dribbble.json */,
 			);
 			path = fixtures;
+			sourceTree = "<group>";
+		};
+		926EF7CE16D3300E004D8EE6 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				926EF7CF16D3302F004D8EE6 /* TFHpple.h */,
+				926EF7D016D3302F004D8EE6 /* TFHpple.m */,
+				926EF7D116D3302F004D8EE6 /* TFHppleElement.h */,
+				926EF7D216D3302F004D8EE6 /* TFHppleElement.m */,
+				926EF7D316D3302F004D8EE6 /* XPathQuery.h */,
+				926EF7D416D3302F004D8EE6 /* XPathQuery.m */,
+			);
+			name = Hpple;
 			sourceTree = "<group>";
 		};
 		92BCAEC316D007C8006264DE = {
@@ -249,6 +285,7 @@
 		92BCAED116D007C8006264DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */,
 				92BCAED216D007C8006264DE /* Cocoa.framework */,
 				92BCAEF016D007C9006264DE /* SenTestingKit.framework */,
 				92BCAED416D007C8006264DE /* Other Frameworks */,
@@ -337,6 +374,10 @@
 				926EF73C16D02256004D8EE6 /* PLKService.m */,
 				926EF79216D196FE004D8EE6 /* PLKOEmbedService.h */,
 				926EF79316D196FF004D8EE6 /* PLKOEmbedService.m */,
+				926EF7C516D32F17004D8EE6 /* PLKOpenGraphService.h */,
+				926EF7C616D32F17004D8EE6 /* PLKOpenGraphService.m */,
+				926EF7C916D32F2E004D8EE6 /* PLKTwitterCardsService.h */,
+				926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */,
 				926EF74B16D02440004D8EE6 /* PLKCloudAppService.h */,
 				926EF74C16D02440004D8EE6 /* PLKCloudAppService.m */,
 				926EF75F16D03666004D8EE6 /* PLKYoutubeService.h */,
@@ -358,6 +399,7 @@
 		92BCAF1116D012B0006264DE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				926EF7CE16D3300E004D8EE6 /* Hpple */,
 				92BCAF1216D012D7006264DE /* AFNetworking */,
 			);
 			name = Vendor;
@@ -571,6 +613,11 @@
 				926EF78416D052A5004D8EE6 /* PLKInstagramService.m in Sources */,
 				926EF79416D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
 				9256F1E116D2DF4600E96DA3 /* PLKDribbbleService.m in Sources */,
+				926EF7C716D32F17004D8EE6 /* PLKOpenGraphService.m in Sources */,
+				926EF7CB16D32F2E004D8EE6 /* PLKTwitterCardsService.m in Sources */,
+				926EF7D516D3302F004D8EE6 /* TFHpple.m in Sources */,
+				926EF7D716D3302F004D8EE6 /* TFHppleElement.m in Sources */,
+				926EF7D916D3302F004D8EE6 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +648,9 @@
 				926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
 				9256F1DE16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m in Sources */,
 				9256F1E416D2E05400E96DA3 /* PLKDribbbleService.m in Sources */,
+				926EF7D616D3302F004D8EE6 /* TFHpple.m in Sources */,
+				926EF7D816D3302F004D8EE6 /* TFHppleElement.m in Sources */,
+				926EF7DA16D3302F004D8EE6 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +751,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PluckDemo/PluckDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PluckDemo/PluckDemo-Info.plist";
 				PRODUCT_NAME = PluckDemo;
 				WRAPPER_EXTENSION = app;
@@ -713,6 +764,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PluckDemo/PluckDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PluckDemo/PluckDemo-Info.plist";
 				PRODUCT_NAME = PluckDemo;
 				WRAPPER_EXTENSION = app;
@@ -726,6 +778,7 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PluckTests/PluckTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PluckTests/PluckTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -744,6 +797,7 @@
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PluckTests/PluckTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "PluckTests/PluckTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
