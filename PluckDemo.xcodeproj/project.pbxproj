@@ -47,6 +47,12 @@
 		926EF7CB16D32F2E004D8EE6 /* PLKTwitterCardsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */; };
 		926EF7CD16D32FCB004D8EE6 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */; };
 		926EF7F016D33AEB004D8EE6 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */; };
+		928D975D16D6FD5700784753 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975816D6FD5700784753 /* TFHpple.m */; };
+		928D975E16D6FD5700784753 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975816D6FD5700784753 /* TFHpple.m */; };
+		928D975F16D6FD5700784753 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975A16D6FD5700784753 /* TFHppleElement.m */; };
+		928D976016D6FD5700784753 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975A16D6FD5700784753 /* TFHppleElement.m */; };
+		928D976116D6FD5700784753 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975C16D6FD5700784753 /* XPathQuery.m */; };
+		928D976216D6FD5700784753 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975C16D6FD5700784753 /* XPathQuery.m */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -120,6 +126,12 @@
 		926EF7C916D32F2E004D8EE6 /* PLKTwitterCardsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKTwitterCardsService.h; sourceTree = "<group>"; };
 		926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKTwitterCardsService.m; sourceTree = "<group>"; };
 		926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		928D975716D6FD5700784753 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		928D975816D6FD5700784753 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		928D975916D6FD5700784753 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		928D975A16D6FD5700784753 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		928D975B16D6FD5700784753 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		928D975C16D6FD5700784753 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -239,8 +251,15 @@
 		928D975016D6FC3B00784753 /* hpple */ = {
 			isa = PBXGroup;
 			children = (
+				928D975716D6FD5700784753 /* TFHpple.h */,
+				928D975816D6FD5700784753 /* TFHpple.m */,
+				928D975916D6FD5700784753 /* TFHppleElement.h */,
+				928D975A16D6FD5700784753 /* TFHppleElement.m */,
+				928D975B16D6FD5700784753 /* XPathQuery.h */,
+				928D975C16D6FD5700784753 /* XPathQuery.m */,
 			);
 			name = hpple;
+			path = Pluck;
 			sourceTree = "<group>";
 		};
 		92BCAEC316D007C8006264DE = {
@@ -349,7 +368,6 @@
 		92BCAF0616D007DB006264DE /* Pluck */ = {
 			isa = PBXGroup;
 			children = (
-				928D975016D6FC3B00784753 /* hpple */,
 				926EF79616D1972A004D8EE6 /* Pluck.h */,
 				92BCAF3416D0165C006264DE /* PLKItem.h */,
 				92BCAF3516D0165C006264DE /* PLKItem.m */,
@@ -382,6 +400,7 @@
 		92BCAF1116D012B0006264DE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				928D975016D6FC3B00784753 /* hpple */,
 				92BCAF1216D012D7006264DE /* AFNetworking */,
 			);
 			name = Vendor;
@@ -597,6 +616,9 @@
 				9256F1E116D2DF4600E96DA3 /* PLKDribbbleService.m in Sources */,
 				926EF7C716D32F17004D8EE6 /* PLKOpenGraphService.m in Sources */,
 				926EF7CB16D32F2E004D8EE6 /* PLKTwitterCardsService.m in Sources */,
+				928D975D16D6FD5700784753 /* TFHpple.m in Sources */,
+				928D975F16D6FD5700784753 /* TFHppleElement.m in Sources */,
+				928D976116D6FD5700784753 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +649,9 @@
 				926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
 				9256F1DE16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m in Sources */,
 				9256F1E416D2E05400E96DA3 /* PLKDribbbleService.m in Sources */,
+				928D975E16D6FD5700784753 /* TFHpple.m in Sources */,
+				928D976016D6FD5700784753 /* TFHppleElement.m in Sources */,
+				928D976216D6FD5700784753 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
