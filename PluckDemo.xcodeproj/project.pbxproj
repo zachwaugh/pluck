@@ -46,12 +46,6 @@
 		926EF7C716D32F17004D8EE6 /* PLKOpenGraphService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7C616D32F17004D8EE6 /* PLKOpenGraphService.m */; };
 		926EF7CB16D32F2E004D8EE6 /* PLKTwitterCardsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */; };
 		926EF7CD16D32FCB004D8EE6 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */; };
-		926EF7D516D3302F004D8EE6 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D016D3302F004D8EE6 /* TFHpple.m */; };
-		926EF7D616D3302F004D8EE6 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D016D3302F004D8EE6 /* TFHpple.m */; };
-		926EF7D716D3302F004D8EE6 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D216D3302F004D8EE6 /* TFHppleElement.m */; };
-		926EF7D816D3302F004D8EE6 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D216D3302F004D8EE6 /* TFHppleElement.m */; };
-		926EF7D916D3302F004D8EE6 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D416D3302F004D8EE6 /* XPathQuery.m */; };
-		926EF7DA16D3302F004D8EE6 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7D416D3302F004D8EE6 /* XPathQuery.m */; };
 		926EF7F016D33AEB004D8EE6 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
@@ -126,12 +120,6 @@
 		926EF7C916D32F2E004D8EE6 /* PLKTwitterCardsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKTwitterCardsService.h; sourceTree = "<group>"; };
 		926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKTwitterCardsService.m; sourceTree = "<group>"; };
 		926EF7CC16D32FCB004D8EE6 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		926EF7CF16D3302F004D8EE6 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = vendor/hpple/TFHpple.h; sourceTree = "<group>"; };
-		926EF7D016D3302F004D8EE6 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = vendor/hpple/TFHpple.m; sourceTree = "<group>"; };
-		926EF7D116D3302F004D8EE6 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = vendor/hpple/TFHppleElement.h; sourceTree = "<group>"; };
-		926EF7D216D3302F004D8EE6 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = vendor/hpple/TFHppleElement.m; sourceTree = "<group>"; };
-		926EF7D316D3302F004D8EE6 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = vendor/hpple/XPathQuery.h; sourceTree = "<group>"; };
-		926EF7D416D3302F004D8EE6 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = vendor/hpple/XPathQuery.m; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -248,17 +236,11 @@
 			path = fixtures;
 			sourceTree = "<group>";
 		};
-		926EF7CE16D3300E004D8EE6 /* Hpple */ = {
+		928D975016D6FC3B00784753 /* hpple */ = {
 			isa = PBXGroup;
 			children = (
-				926EF7CF16D3302F004D8EE6 /* TFHpple.h */,
-				926EF7D016D3302F004D8EE6 /* TFHpple.m */,
-				926EF7D116D3302F004D8EE6 /* TFHppleElement.h */,
-				926EF7D216D3302F004D8EE6 /* TFHppleElement.m */,
-				926EF7D316D3302F004D8EE6 /* XPathQuery.h */,
-				926EF7D416D3302F004D8EE6 /* XPathQuery.m */,
 			);
-			name = Hpple;
+			name = hpple;
 			sourceTree = "<group>";
 		};
 		92BCAEC316D007C8006264DE = {
@@ -367,6 +349,7 @@
 		92BCAF0616D007DB006264DE /* Pluck */ = {
 			isa = PBXGroup;
 			children = (
+				928D975016D6FC3B00784753 /* hpple */,
 				926EF79616D1972A004D8EE6 /* Pluck.h */,
 				92BCAF3416D0165C006264DE /* PLKItem.h */,
 				92BCAF3516D0165C006264DE /* PLKItem.m */,
@@ -399,7 +382,6 @@
 		92BCAF1116D012B0006264DE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				926EF7CE16D3300E004D8EE6 /* Hpple */,
 				92BCAF1216D012D7006264DE /* AFNetworking */,
 			);
 			name = Vendor;
@@ -615,9 +597,6 @@
 				9256F1E116D2DF4600E96DA3 /* PLKDribbbleService.m in Sources */,
 				926EF7C716D32F17004D8EE6 /* PLKOpenGraphService.m in Sources */,
 				926EF7CB16D32F2E004D8EE6 /* PLKTwitterCardsService.m in Sources */,
-				926EF7D516D3302F004D8EE6 /* TFHpple.m in Sources */,
-				926EF7D716D3302F004D8EE6 /* TFHppleElement.m in Sources */,
-				926EF7D916D3302F004D8EE6 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,9 +627,6 @@
 				926EF79516D196FF004D8EE6 /* PLKOEmbedService.m in Sources */,
 				9256F1DE16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m in Sources */,
 				9256F1E416D2E05400E96DA3 /* PLKDribbbleService.m in Sources */,
-				926EF7D616D3302F004D8EE6 /* TFHpple.m in Sources */,
-				926EF7D816D3302F004D8EE6 /* TFHppleElement.m in Sources */,
-				926EF7DA16D3302F004D8EE6 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,3 @@
 [submodule "vendor/AFNetworking"]
 	path = vendor/AFNetworking
 	url = https://github.com/AFNetworking/AFNetworking.git
-[submodule "vendor/hpple"]
-	path = vendor/hpple
-	url = https://github.com/topfunky/hpple.git
