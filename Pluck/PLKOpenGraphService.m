@@ -19,9 +19,7 @@
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 	
 	[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-		TFHpple *doc = [[TFHpple alloc] initWithHTMLData:responseObject];
-		NSArray *metaTags = [doc searchWithXPathQuery:@"//meta"];
-		PLKItem *item = [self itemFromDictionary:[self openGraphAttributesFromTags:metaTags]];
+		PLKItem *item = [self itemFromDictionary:[self openGraphAttributesFromHTMLData:responseObject]];
 		
 		if (block) block(item, nil);
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -31,11 +29,14 @@
 	[operation start];
 }
 
-+ (NSDictionary *)openGraphAttributesFromTags:(NSArray *)tags
++ (NSDictionary *)openGraphAttributesFromHTMLData:(NSData *)data
 {
+	TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
+	NSArray *metaTags = [doc searchWithXPathQuery:@"/html/head/meta"];
+
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	
-	for (TFHppleElement *element in tags) {
+	for (TFHppleElement *element in metaTags) {
 		NSString *property = element.attributes[@"property"];
 		if (property && [property hasPrefix:@"og:"]) {
 			NSString *ogProperty = [property substringFromIndex:3];
@@ -52,9 +53,10 @@
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-					@"url": dict[@"url"],
+					@"url": [NSURL URLWithString:dict[@"image"]],
 					@"service": dict[@"site_name"],
-					@"title": dict[@"title"]
+					@"title": dict[@"title"],
+					@"type": @"photo"
 					}];
 }
 

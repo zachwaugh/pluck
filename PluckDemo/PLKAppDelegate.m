@@ -32,7 +32,17 @@
       self.loading = NO;
 		}];
 	} else {
-		self.textView.string = [NSString stringWithFormat:@"Unsupported url: %@", url];
+		self.loading = YES;
+		[PLKOpenGraphService itemForURL:url block:^(PLKItem *item, NSError *error) {
+			if (item) {
+				self.imageView.image = [[NSImage alloc] initWithContentsOfURL:item.url];
+				self.textView.string = [[item.description componentsSeparatedByString:@", "] componentsJoinedByString:@"\n"];
+			} else {
+				self.textView.string = [NSString stringWithFormat:@"Unsupported url: %@", url];
+			}
+      
+      self.loading = NO;
+		}];
 	}
 }
 

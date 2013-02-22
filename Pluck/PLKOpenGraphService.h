@@ -10,4 +10,6 @@
 
 @interface PLKOpenGraphService : PLKService
 
++ (NSDictionary *)openGraphAttributesFromHTMLData:(NSData *)data;
+
 @end

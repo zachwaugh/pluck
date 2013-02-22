@@ -53,6 +53,13 @@
 		928D976016D6FD5700784753 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975A16D6FD5700784753 /* TFHppleElement.m */; };
 		928D976116D6FD5700784753 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975C16D6FD5700784753 /* XPathQuery.m */; };
 		928D976216D6FD5700784753 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D975C16D6FD5700784753 /* XPathQuery.m */; };
+		928D977016D71EC000784753 /* cloud.html in Resources */ = {isa = PBXBuildFile; fileRef = 928D976F16D71EC000784753 /* cloud.html */; };
+		928D977416D71EDF00784753 /* PLKOpenGraphServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D977316D71EDF00784753 /* PLKOpenGraphServiceTest.m */; };
+		928D977516D720B200784753 /* PLKOpenGraphService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7C616D32F17004D8EE6 /* PLKOpenGraphService.m */; };
+		928D977816D7239200784753 /* PLKTwitterCardsServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 928D977716D7239200784753 /* PLKTwitterCardsServiceTest.m */; };
+		928D977916D7246A00784753 /* PLKTwitterCardsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EF7CA16D32F2E004D8EE6 /* PLKTwitterCardsService.m */; };
+		928D977B16D72BAA00784753 /* imdb.html in Resources */ = {isa = PBXBuildFile; fileRef = 928D977A16D72BAA00784753 /* imdb.html */; };
+		928D977D16D72D1800784753 /* github.html in Resources */ = {isa = PBXBuildFile; fileRef = 928D977C16D72D1800784753 /* github.html */; };
 		92BCAED316D007C8006264DE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BCAED216D007C8006264DE /* Cocoa.framework */; };
 		92BCAEDD16D007C9006264DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAEDB16D007C9006264DE /* InfoPlist.strings */; };
 		92BCAEDF16D007C9006264DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAEDE16D007C9006264DE /* main.m */; };
@@ -132,6 +139,13 @@
 		928D975A16D6FD5700784753 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		928D975B16D6FD5700784753 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		928D975C16D6FD5700784753 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		928D976F16D71EC000784753 /* cloud.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cloud.html; sourceTree = "<group>"; };
+		928D977216D71EDF00784753 /* PLKOpenGraphServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKOpenGraphServiceTest.h; sourceTree = "<group>"; };
+		928D977316D71EDF00784753 /* PLKOpenGraphServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKOpenGraphServiceTest.m; sourceTree = "<group>"; };
+		928D977616D7239200784753 /* PLKTwitterCardsServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKTwitterCardsServiceTest.h; sourceTree = "<group>"; };
+		928D977716D7239200784753 /* PLKTwitterCardsServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKTwitterCardsServiceTest.m; sourceTree = "<group>"; };
+		928D977A16D72BAA00784753 /* imdb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = imdb.html; sourceTree = "<group>"; };
+		928D977C16D72D1800784753 /* github.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = github.html; sourceTree = "<group>"; };
 		92BCAECE16D007C8006264DE /* PluckDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluckDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BCAED216D007C8006264DE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92BCAED516D007C8006264DE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -238,6 +252,9 @@
 		926EF75C16D033D8004D8EE6 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				928D977C16D72D1800784753 /* github.html */,
+				928D977A16D72BAA00784753 /* imdb.html */,
+				928D976F16D71EC000784753 /* cloud.html */,
 				926EF79016D18295004D8EE6 /* instagram.json */,
 				926EF77616D049DC004D8EE6 /* vimeo.json */,
 				926EF76D16D040A7004D8EE6 /* flickr.json */,
@@ -336,6 +353,10 @@
 				926EF75416D02584004D8EE6 /* NSURL+PluckTest.m */,
 				926EF74816D023E2004D8EE6 /* PLKServiceTest.h */,
 				926EF74916D023E2004D8EE6 /* PLKServiceTest.m */,
+				928D977216D71EDF00784753 /* PLKOpenGraphServiceTest.h */,
+				928D977316D71EDF00784753 /* PLKOpenGraphServiceTest.m */,
+				928D977616D7239200784753 /* PLKTwitterCardsServiceTest.h */,
+				928D977716D7239200784753 /* PLKTwitterCardsServiceTest.m */,
 				926EF75616D0287E004D8EE6 /* PLKCloudAppServiceTest.h */,
 				926EF75716D0287E004D8EE6 /* PLKCloudAppServiceTest.m */,
 				926EF76316D0370F004D8EE6 /* PLKYoutubeServiceTest.h */,
@@ -567,6 +588,9 @@
 				926EF77716D049DC004D8EE6 /* vimeo.json in Resources */,
 				926EF79116D18295004D8EE6 /* instagram.json in Resources */,
 				9256F1E316D2DFCD00E96DA3 /* dribbble.json in Resources */,
+				928D977016D71EC000784753 /* cloud.html in Resources */,
+				928D977B16D72BAA00784753 /* imdb.html in Resources */,
+				928D977D16D72D1800784753 /* github.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +676,10 @@
 				928D975E16D6FD5700784753 /* TFHpple.m in Sources */,
 				928D976016D6FD5700784753 /* TFHppleElement.m in Sources */,
 				928D976216D6FD5700784753 /* XPathQuery.m in Sources */,
+				928D977416D71EDF00784753 /* PLKOpenGraphServiceTest.m in Sources */,
+				928D977516D720B200784753 /* PLKOpenGraphService.m in Sources */,
+				928D977816D7239200784753 /* PLKTwitterCardsServiceTest.m in Sources */,
+				928D977916D7246A00784753 /* PLKTwitterCardsService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

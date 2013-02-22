@@ -19,9 +19,7 @@
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
 	
 	[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-		TFHpple *doc = [[TFHpple alloc] initWithHTMLData:responseObject];
-		NSArray *metaTags = [doc searchWithXPathQuery:@"//meta"];
-		PLKItem *item = [self itemFromDictionary:[self openGraphAttributesFromTags:metaTags]];
+		PLKItem *item = [self itemFromDictionary:[self twitterCardsAttributesFromHTMLData:responseObject]];
 		
 		if (block) block(item, nil);
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -31,16 +29,30 @@
 	[operation start];
 }
 
-+ (NSDictionary *)openGraphAttributesFromTags:(NSArray *)tags
++ (NSDictionary *)twitterCardsAttributesFromHTMLData:(NSData *)data
 {
+	TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
+	NSArray *metaTags = [doc searchWithXPathQuery:@"/html/head/meta"];
+	
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	
-	for (TFHppleElement *element in tags) {
-		NSString *name = element.attributes[@"name"];
-		if (name && [name hasPrefix:@"twitter:"]) {
-			NSString *ogName = [name substringFromIndex:8];
-			NSString *content = element.attributes[@"content"];
-			dict[ogName] = content;
+	// Seems to be a lack of standardization with tag attributes, I've seen meta tags with:
+	// name/content
+	// property/content
+	// name/value
+	//
+	// This will attempt to handle any combo of those
+	
+	for (TFHppleElement *element in metaTags) {
+		NSString *metaName = (element.attributes[@"name"]) ?: element.attributes[@"property"];
+
+		if (metaName && [metaName hasPrefix:@"twitter:"]) {
+			NSString *name = [metaName substringFromIndex:8];
+			NSString *content = (element.attributes[@"content"]) ?: element.attributes[@"value"];
+			
+			if (content) {
+				dict[name] = content;
+			}
 		}
 	}
 	
@@ -52,9 +64,8 @@
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-					@"url": dict[@"image"],
+					@"url": [NSURL URLWithString:dict[@"image"]],
 					@"service": dict[@"site"],
-					@"title": dict[@"title"],
 					@"type": dict[@"card"]
 					}];
 }
