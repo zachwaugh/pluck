@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Zach Waugh. All rights reserved.
 //
 
-#import "PLKService.h"
+#import "PLKOEmbedService.h"
 
-@interface PLKDribbbleService : PLKService
+@interface PLKDribbbleService : PLKOEmbedService
 
 @end

@@ -10,12 +10,6 @@
 #import "PLKDribbbleService.h"
 #import "PLKItem.h"
 
-@interface PLKDribbbleService (private)
-
-+ (NSURL *)apiURLForURL:(NSURL *)url;
-
-@end
-
 @implementation PLKDribbbleServiceTest
 
 - (void)testIsSupportedURL
@@ -33,7 +27,7 @@
 {
 	NSString *jsonPath = [[NSBundle bundleForClass:self.class] pathForResource:@"dribbble" ofType:@"json"];
 	NSData *json = [NSData dataWithContentsOfFile:jsonPath];
-	NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json options:0 error:nil];
+	NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:json options:NULL error:nil];
 	
 	expect(json).toNot.beNil();
 	expect(json.length).toNot.equal(0);
@@ -45,17 +39,6 @@
 	expect(item.url).to.equal([NSURL URLWithString:@"http://dribbble.s3.amazonaws.com/users/1963/screenshots/931225/flint-emoji-autocomplete.png"]);
 	expect(item.service).to.equal(@"Dribbble");
 	expect(item.title).to.equal(@"New emoji autocomplete in Flint");
-}
-
-- (void)testAPIURLforURL
-{
-  NSURL *url = [NSURL URLWithString:@"http://dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint"];
-  NSURL *apiURL = [PLKDribbbleService apiURLForURL:url];
-  expect(apiURL).to.equal([NSURL URLWithString:@"http://api.dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint"]);
-  
-  // Don't care about query string
-  apiURL = [PLKDribbbleService apiURLForURL:[NSURL URLWithString:@"http://dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint?list=following"]];
-  expect(apiURL).to.equal([NSURL URLWithString:@"http://api.dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint"]);
 }
 
 #if TEST_LIVE
