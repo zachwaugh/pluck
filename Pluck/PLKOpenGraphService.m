@@ -46,15 +46,19 @@
 		}
 	}
 
+#if DEBUG
 	NSLog(@"openGraph attributes: %@", dict);
-	
+#endif
+  
 	return dict;
 }
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
+  if (!dict || dict.count == 0) return nil;
+  
 	return [PLKItem itemWithDictionary:@{
-					@"url": [NSURL URLWithString:dict[@"image"]],
+					@"url": [NSURL URLWithString:[dict plk_stringForKey:@"image"]],
 					@"service": [dict plk_stringForKey:@"site_name"],
 					@"title": [dict plk_stringForKey:@"title"],
           @"description": [dict plk_stringForKey:@"description"],

@@ -10,6 +10,7 @@
 #import "PLKItem.h"
 #import "AFHTTPRequestOperation.h"
 #import "TFHpple.h"
+#import "NSDictionary+Pluck.h"
 
 @implementation PLKTwitterCardsService
 
@@ -56,17 +57,21 @@
 		}
 	}
 	
+#if DEBUG
 	NSLog(@"Twitter card attributes: %@", dict);
-	
+#endif
+  
 	return dict;
 }
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
+  if (!dict || dict.count == 0) return nil;
+  
 	return [PLKItem itemWithDictionary:@{
-					@"url": [NSURL URLWithString:dict[@"image"]],
-					@"service": dict[@"site"],
-					@"type": dict[@"card"]
+					@"url": [NSURL URLWithString:[dict plk_stringForKey:@"image"]],
+					@"service": [dict plk_stringForKey:@"site"],
+					@"type": [dict plk_stringForKey:@"card"]
 					}];
 }
 

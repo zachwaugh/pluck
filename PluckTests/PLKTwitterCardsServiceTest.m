@@ -49,6 +49,9 @@
 	expect(item.type).to.equal(@"photo");
 	expect(item.service).to.equal(@"@cloudapp");
 	expect(item.url).to.equal([NSURL URLWithString:@"http://f.cl.ly/items/0A0U011D3G3K3h361E00/Image%202013-02-14%20at%203.20.51%20PM.png"]);
+  
+  item = [PLKTwitterCardsService itemFromDictionary:@{}];
+  expect(item).to.beNil();
 }
 
 @end

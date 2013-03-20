@@ -90,6 +90,9 @@
 	expect(item.service).to.equal(@"GitHub");
 	expect(item.title).to.equal(@"pluck");
 	expect(item.url).to.equal([NSURL URLWithString:@"https://secure.gravatar.com/avatar/8f0b58e74434edaf2917c9d3d657188e?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png"]);
+  
+  item = [PLKOpenGraphService itemFromDictionary:@{}];
+  expect(item).to.beNil();
 }
 
 @end

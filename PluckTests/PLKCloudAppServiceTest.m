@@ -39,6 +39,9 @@
 	expect(item.service).to.equal(@"CloudApp");
 	expect(item.title).to.equal(@"Screen Shot 2013-02-15 at 3.41.57 PM.png");
 	expect(item.url).to.equal(contentURL);
+  
+  item = [PLKCloudAppService itemFromDictionary:@{}];
+  expect(item).to.beNil();
 }
 
 #if TEST_LIVE

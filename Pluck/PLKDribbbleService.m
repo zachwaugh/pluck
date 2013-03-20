@@ -32,16 +32,14 @@
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
-	if (dict) {
-		return [PLKItem itemWithDictionary:@{
+  if (!dict || dict.count == 0) return nil;
+  
+  return [PLKItem itemWithDictionary:@{
 						@"url": [NSURL URLWithString:dict[@"image_url"]],
 						@"type": @"photo",
 						@"service": @"Dribbble",
 						@"title": dict[@"title"]
 						}];
-	}
-	
-	return nil;
 }
 
 

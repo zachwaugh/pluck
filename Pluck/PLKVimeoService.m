@@ -32,8 +32,9 @@
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
-	if (dict) {
-		return [PLKItem itemWithDictionary:@{
+  if (!dict || dict.count == 0) return nil;
+  
+	return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],
 						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
 						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
@@ -41,9 +42,6 @@
 						@"service": dict[@"provider_name"],
 						@"title": dict[@"title"]
 						}];
-	}
-	
-	return nil;
 }
 
 @end

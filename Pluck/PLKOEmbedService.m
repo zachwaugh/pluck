@@ -46,18 +46,14 @@
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
-	if (dict) {
-		NSDictionary *itemDict = @{
-			@"type": dict[@"type"],
-			@"url": [NSURL URLWithString:dict[@"url"]],
-			@"service": dict[@"provider_name"],
-			@"title": dict[@"title"]
-		};
-		
-		return [PLKItem itemWithDictionary:itemDict];
-	}
-	
-	return nil;
+  if (!dict || dict.count == 0) return nil;
+  
+  return [PLKItem itemWithDictionary:@{
+          @"type": dict[@"type"],
+          @"url": [NSURL URLWithString:dict[@"url"]],
+          @"service": dict[@"provider_name"],
+          @"title": dict[@"title"]
+          }];
 }
 
 @end
