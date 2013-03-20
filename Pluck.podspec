@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'Pluck'
-  s.version      = '0.1.4'
+  s.version      = '0.2.0'
   s.summary      = 'Library for grabbing data from OEmbed (and OEmbed-ish) sites'
   s.license      = 'MIT'
   s.homepage     = 'https://github.com/zachwaugh/pluck'
