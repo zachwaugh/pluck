@@ -10,6 +10,7 @@
 #import "PLKItem.h"
 #import "AFHTTPRequestOperation.h"
 #import "TFHpple.h"
+#import "NSDictionary+Pluck.h"
 
 @implementation PLKOpenGraphService
 
@@ -54,10 +55,11 @@
 {
 	return [PLKItem itemWithDictionary:@{
 					@"url": [NSURL URLWithString:dict[@"image"]],
-					@"service": dict[@"site_name"],
-					@"title": dict[@"title"],
+					@"service": [dict plk_stringForKey:@"site_name"],
+					@"title": [dict plk_stringForKey:@"title"],
+          @"description": [dict plk_stringForKey:@"description"],
 					@"type": @"photo"
-					}];
+         }];
 }
 
 @end
