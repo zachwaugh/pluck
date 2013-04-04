@@ -29,6 +29,7 @@ Pluck currently supports:
 - Flickr
 - Instagram
 - Dribbble
+- Droplr
 
 Support is planned for:
 - Twitter
