@@ -57,10 +57,6 @@
 		}
 	}
 	
-#if DEBUG
-	NSLog(@"Twitter card attributes: %@", dict);
-#endif
-  
 	return dict;
 }
 

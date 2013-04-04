@@ -32,30 +32,33 @@
 
 + (NSDictionary *)openGraphAttributesFromHTMLData:(NSData *)data
 {
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+	
 	TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
 	NSArray *metaTags = [doc searchWithXPathQuery:@"/html/head/meta"];
-
-	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	
 	for (TFHppleElement *element in metaTags) {
 		NSString *property = element.attributes[@"property"];
 		if (property && [property hasPrefix:@"og:"]) {
 			NSString *ogProperty = [property substringFromIndex:3];
 			NSString *content = element.attributes[@"content"];
-			dict[ogProperty] = content;
+			
+			if (!content) {
+				content = element.attributes[@"expr:content"];
+			}
+			
+			if (content) {
+				dict[ogProperty] = content;
+			}
 		}
 	}
-
-#if DEBUG
-	NSLog(@"openGraph attributes: %@", dict);
-#endif
-  
+	
 	return dict;
 }
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
+  if (!dict || dict.count == 0 || !dict[@"image"]) return nil;
   
 	return [PLKItem itemWithDictionary:@{
 					@"url": [NSURL URLWithString:[dict plk_stringForKey:@"image"]],
@@ -63,7 +66,7 @@
 					@"title": [dict plk_stringForKey:@"title"],
           @"description": [dict plk_stringForKey:@"description"],
 					@"type": @"photo"
-         }];
+					}];
 }
 
 @end

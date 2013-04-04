@@ -45,6 +45,23 @@
 	expect(dict[@"site_name"]).to.equal(@"GitHub");
 	expect(dict[@"url"]).to.equal(@"https://github.com/zachwaugh/pluck");
 	expect(dict[@"image"]).to.equal(@"https://secure.gravatar.com/avatar/8f0b58e74434edaf2917c9d3d657188e?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png");
+	
+	
+	// No meta tags
+	htmlData = [@"<html><head></head></html>" dataUsingEncoding:NSUTF8StringEncoding];
+	dict = [PLKOpenGraphService openGraphAttributesFromHTMLData:htmlData];
+	expect(dict).to.equal(@{});
+	
+	// Alternate content tag
+	htmlData = [@"<html><head><meta property=\"og:description\" expr:content=\"description\"></head></html>" dataUsingEncoding:NSUTF8StringEncoding];
+	dict = [PLKOpenGraphService openGraphAttributesFromHTMLData:htmlData];
+	expect(dict).toNot.beNil();
+	expect(dict[@"description"]).to.equal(@"description");
+	
+	// Missing content tag
+	htmlData = [@"<html><head><meta property=\"og:description\"></head></html>" dataUsingEncoding:NSUTF8StringEncoding];
+	dict = [PLKOpenGraphService openGraphAttributesFromHTMLData:htmlData];
+	expect(dict).to.equal(@{});
 }
 
 - (void)testItemFromDictionary
