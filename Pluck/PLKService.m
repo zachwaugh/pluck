@@ -14,6 +14,7 @@
 #import "PLKInstagramService.h"
 #import "PLKDribbbleService.h"
 #import "PLKDroplrService.h"
+#import "PLKRdioService.h"
 
 NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 
@@ -24,7 +25,7 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	static NSArray *_services = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class], [PLKDribbbleService class], [PLKDroplrService class]];
+		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class], [PLKDribbbleService class], [PLKDroplrService class], [PLKRdioService class]];
 	});
 	
 	return _services;
@@ -68,7 +69,24 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
-	return nil;
+  if (!dict || dict.count == 0) return nil;
+  
+  PLKItem *item = nil;
+  
+  @try {
+    item = [self parseItemFromDictionary:dict];
+  }
+  @catch (NSException *exception) {
+    NSLog(@"[%@] itemFromDictionary: %@, exception: %@", self, dict, exception);
+  }
+  
+	return item;
+}
+
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
+{
+  // Implement in subclass
+  return nil;
 }
 
 @end

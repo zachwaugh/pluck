@@ -26,7 +26,7 @@
 				self.imageView.image = [[NSImage alloc] initWithContentsOfURL:item.url];
 				self.textView.string = [[item.description componentsSeparatedByString:@", "] componentsJoinedByString:@"\n"];
 			} else {
-				self.textView.string = error.localizedDescription;
+				self.textView.string = (error) ? error.localizedDescription : @"Unknown error";
 			}
       
       self.loading = NO;

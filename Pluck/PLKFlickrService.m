@@ -9,7 +9,7 @@
 #import "PLKFlickrService.h"
 #import "PLKItem.h"
 #import "NSURL+Pluck.h"
-#import "AFHTTPClient.h"
+#import "NSDictionary+Pluck.h"
 
 #define FLICKR_REGEX @"https?://.*(flickr\\.com/photos|flic\\.kr/p)/.*"
 
@@ -30,9 +30,10 @@
 	return @{ @"url": url.absoluteString, @"format": @"json" };
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
+  // Need to ensure these keys are present
+  if (![dict plk_isSafeForKeys:@[@"type", @"url", @"thumbnail_url", @"provider_name", @"title"]]) return nil;
   
 	return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],

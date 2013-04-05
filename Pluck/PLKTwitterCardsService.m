@@ -60,10 +60,8 @@
 	return dict;
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
-  
 	return [PLKItem itemWithDictionary:@{
 					@"url": [NSURL URLWithString:[dict plk_stringForKey:@"image"]],
 					@"service": [dict plk_stringForKey:@"site"],

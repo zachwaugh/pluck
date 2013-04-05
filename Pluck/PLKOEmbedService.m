@@ -19,6 +19,7 @@
 
 + (NSURL *)oEmbedBaseURL
 {
+  // Must implement in subclass
 	return nil;
 }
 
@@ -44,9 +45,10 @@
 	}];
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
+  // Need to ensure these keys are present
+  if (![dict plk_isSafeForKeys:@[@"type", @"url", @"provider_name", @"title"]]) return nil;
   
   return [PLKItem itemWithDictionary:@{
           @"type": dict[@"type"],

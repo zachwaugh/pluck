@@ -20,10 +20,8 @@
 	return (url && [url plk_isMatchedByRegex:DROPLR_REGEX]);
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
-  
 	return [PLKItem itemWithDictionary:@{
 					@"url": [NSURL URLWithString:dict[@"image"]],
 					@"title": [dict plk_stringForKey:@"title"],

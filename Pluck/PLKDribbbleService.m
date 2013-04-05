@@ -30,10 +30,8 @@
 	return [NSURL URLWithString:@"http://api.dribbble.com/oembed"];
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
-  
   return [PLKItem itemWithDictionary:@{
 						@"url": [NSURL URLWithString:dict[@"image_url"]],
 						@"type": @"photo",

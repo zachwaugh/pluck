@@ -31,10 +31,8 @@
 	return @{ @"url": url.absoluteString, @"format": @"json" };
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
-  
 	return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],
 						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],

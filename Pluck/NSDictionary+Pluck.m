@@ -16,4 +16,16 @@
   return ([value isKindOfClass:[NSString class]]) ? value : @"";
 }
 
+- (BOOL)plk_isSafeForKeys:(NSArray *)keys
+{
+  for (NSString *key in keys) {
+    id value = self[key];
+    if (value == nil || value == [NSNull null]) {
+      return NO;
+    }
+  }
+  
+  return YES;
+}
+
 @end

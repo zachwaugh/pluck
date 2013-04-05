@@ -37,20 +37,18 @@
   [operation start];
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	// We only care about image drops
-	if ([dict[@"item_type"] isEqualToString:@"image"]) {
-		return [PLKItem itemWithDictionary:@{
-						@"url": [NSURL URLWithString:dict[@"content_url"]],
-						@"type": @"photo",
-						@"service": @"CloudApp",
-						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"title": dict[@"name"]
-						}];
-	}
-	
-	return nil;
+	if (![dict[@"item_type"] isEqualToString:@"image"]) return nil;
+    
+  return [PLKItem itemWithDictionary:@{
+          @"url": [NSURL URLWithString:dict[@"content_url"]],
+          @"type": @"photo",
+          @"service": @"CloudApp",
+          @"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
+          @"title": dict[@"name"]
+          }];
 }
 
 @end

@@ -13,6 +13,8 @@
 		920474A416FA1244009C3C4B /* PLKDroplrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9204749C16FA0D9A009C3C4B /* PLKDroplrService.m */; };
 		920474A516FA126A009C3C4B /* NSDictionary+Pluck.m in Sources */ = {isa = PBXBuildFile; fileRef = 920474A216FA0F37009C3C4B /* NSDictionary+Pluck.m */; };
 		920474A716FA12EE009C3C4B /* droplr.html in Resources */ = {isa = PBXBuildFile; fileRef = 920474A616FA12EE009C3C4B /* droplr.html */; };
+		92196794170F269B00E61D8E /* PLKRdioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92196793170F269B00E61D8E /* PLKRdioService.m */; };
+		92196795170F309000E61D8E /* PLKRdioService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92196793170F269B00E61D8E /* PLKRdioService.m */; };
 		9256F1DE16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256F1DD16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m */; };
 		9256F1E116D2DF4600E96DA3 /* PLKDribbbleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9256F1E016D2DF4600E96DA3 /* PLKDribbbleService.m */; };
 		9256F1E316D2DFCD00E96DA3 /* dribbble.json in Resources */ = {isa = PBXBuildFile; fileRef = 9256F1E216D2DFCD00E96DA3 /* dribbble.json */; };
@@ -100,6 +102,8 @@
 		920474A116FA0F37009C3C4B /* NSDictionary+Pluck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Pluck.h"; sourceTree = "<group>"; };
 		920474A216FA0F37009C3C4B /* NSDictionary+Pluck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Pluck.m"; sourceTree = "<group>"; };
 		920474A616FA12EE009C3C4B /* droplr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = droplr.html; sourceTree = "<group>"; };
+		92196792170F269B00E61D8E /* PLKRdioService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKRdioService.h; sourceTree = "<group>"; };
+		92196793170F269B00E61D8E /* PLKRdioService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKRdioService.m; sourceTree = "<group>"; };
 		9256F1DC16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKDribbbleServiceTest.h; sourceTree = "<group>"; };
 		9256F1DD16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKDribbbleServiceTest.m; sourceTree = "<group>"; };
 		9256F1DF16D2DF4600E96DA3 /* PLKDribbbleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKDribbbleService.h; sourceTree = "<group>"; };
@@ -430,6 +434,8 @@
 				9256F1E016D2DF4600E96DA3 /* PLKDribbbleService.m */,
 				9204749B16FA0D9A009C3C4B /* PLKDroplrService.h */,
 				9204749C16FA0D9A009C3C4B /* PLKDroplrService.m */,
+				92196792170F269B00E61D8E /* PLKRdioService.h */,
+				92196793170F269B00E61D8E /* PLKRdioService.m */,
 				926EF74F16D024E0004D8EE6 /* NSURL+Pluck.h */,
 				926EF75016D024E0004D8EE6 /* NSURL+Pluck.m */,
 				920474A116FA0F37009C3C4B /* NSDictionary+Pluck.h */,
@@ -666,6 +672,7 @@
 				928D976116D6FD5700784753 /* XPathQuery.m in Sources */,
 				9204749D16FA0D9A009C3C4B /* PLKDroplrService.m in Sources */,
 				920474A316FA0F37009C3C4B /* NSDictionary+Pluck.m in Sources */,
+				92196794170F269B00E61D8E /* PLKRdioService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +713,7 @@
 				920474A016FA0E2C009C3C4B /* PLKDroplrServiceTest.m in Sources */,
 				920474A416FA1244009C3C4B /* PLKDroplrService.m in Sources */,
 				920474A516FA126A009C3C4B /* NSDictionary+Pluck.m in Sources */,
+				92196795170F309000E61D8E /* PLKRdioService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

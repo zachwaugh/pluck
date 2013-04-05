@@ -10,6 +10,7 @@
 #import "PLKItem.h"
 #import "AFHTTPClient.h"
 #import "NSURL+Pluck.h"
+#import "NSDictionary+Pluck.h"
 
 #define VIMEO_REGEX @"https?://.*vimeo\\.com/.*"
 
@@ -30,10 +31,8 @@
 	return @{ @"url": url.absoluteString };
 }
 
-+ (PLKItem *)itemFromDictionary:(NSDictionary *)dict
++ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
-  
 	return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],
 						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
