@@ -8,7 +8,6 @@
 
 #import "PLKVimeoService.h"
 #import "PLKItem.h"
-#import "AFHTTPClient.h"
 #import "NSURL+Pluck.h"
 #import "NSDictionary+Pluck.h"
 
@@ -34,13 +33,18 @@
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-						@"type": dict[@"type"],
+						@"type": [dict plk_stringForKey:@"type"],
 						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
 						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"html": dict[@"html"],
-						@"service": dict[@"provider_name"],
-						@"title": dict[@"title"]
+						@"html": [dict plk_stringForKey:@"html"],
+						@"service": @"Vimeo",
+						@"title": [dict plk_stringForKey:@"title"]
 						}];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"thumbnail_url", @"type", @"title"];
 }
 
 @end

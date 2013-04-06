@@ -14,7 +14,7 @@
 
 @implementation PLKOpenGraphService
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
++ (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *, NSError *))block
 {
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -32,21 +32,16 @@
 
 + (NSDictionary *)openGraphAttributesFromHTMLData:(NSData *)data
 {
-	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-	
 	TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
 	NSArray *metaTags = [doc searchWithXPathQuery:@"/html/head/meta"];
+	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	
 	for (TFHppleElement *element in metaTags) {
 		NSString *property = element.attributes[@"property"];
 		if (property && [property hasPrefix:@"og:"]) {
 			NSString *ogProperty = [property substringFromIndex:3];
-			NSString *content = element.attributes[@"content"];
-			
-			if (!content) {
-				content = element.attributes[@"expr:content"];
-			}
-			
+			NSString *content = (element.attributes[@"content"]) ?: element.attributes[@"expr:content"];
+
 			if (content) {
 				dict[ogProperty] = content;
 			}
@@ -58,15 +53,18 @@
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict[@"image"]) return nil;
-  
 	return [PLKItem itemWithDictionary:@{
-					@"url": [NSURL URLWithString:[dict plk_stringForKey:@"image"]],
+					@"url": [NSURL URLWithString:dict[@"image"]],
 					@"service": [dict plk_stringForKey:@"site_name"],
 					@"title": [dict plk_stringForKey:@"title"],
           @"description": [dict plk_stringForKey:@"description"],
 					@"type": @"photo"
 					}];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"image", @"site_name"];
 }
 
 @end

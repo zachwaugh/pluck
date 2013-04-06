@@ -21,7 +21,7 @@
 	
 	if (url && [PLKService isSupportedURL:url]) {
     self.loading = YES;
-		[PLKService itemForURL:url block:^(PLKItem *item, NSError *error) {
+		[PLKService itemForURL:url completion:^(PLKItem *item, NSError *error) {
 			if (item) {
 				self.imageView.image = [[NSImage alloc] initWithContentsOfURL:item.url];
 				self.textView.string = [[item.description componentsSeparatedByString:@", "] componentsJoinedByString:@"\n"];
@@ -33,7 +33,7 @@
 		}];
 	} else {
 		self.loading = YES;
-		[PLKOpenGraphService itemForURL:url block:^(PLKItem *item, NSError *error) {
+		[PLKOpenGraphService itemForURL:url completion:^(PLKItem *item, NSError *error) {
 			if (item) {
 				self.imageView.image = [[NSImage alloc] initWithContentsOfURL:item.url];
 				self.textView.string = [[item.description componentsSeparatedByString:@", "] componentsJoinedByString:@"\n"];

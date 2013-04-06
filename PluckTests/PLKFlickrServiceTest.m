@@ -38,6 +38,14 @@
 	expect(item.url).to.equal([NSURL URLWithString:@"http://farm5.staticflickr.com/4109/4965082870_00725ef91e_b.jpg"]);
 	expect(item.service).to.equal(@"Flickr");
 	expect(item.title).to.equal(@"Zoe with feather");
+	
+	NSMutableDictionary *badDict = [dict mutableCopy];
+	badDict[@"url"] = [NSNull null];
+	item = [PLKFlickrService itemFromDictionary:badDict];
+	expect(item).to.beNil();
+	
+	item = [PLKFlickrService itemFromDictionary:@{}];
+  expect(item).to.beNil();
 }
 
 #if TEST_LIVE

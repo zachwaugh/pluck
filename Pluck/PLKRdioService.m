@@ -8,6 +8,7 @@
 
 #import "PLKRdioService.h"
 #import "NSURL+Pluck.h"
+#import "NSDictionary+Pluck.h"
 #import "PLKItem.h"
 
 #define RDIO_REGEX @"https?://.*(rdio\\.com|rd\\.io)/.*"
@@ -34,10 +35,15 @@
   return [PLKItem itemWithDictionary:@{
    @"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
    @"type": @"photo",
-   @"service": dict[@"provider_name"],
-   @"title": dict[@"title"],
-   @"html": dict[@"html"]
+   @"service": @"Rdio",
+   @"title": [dict plk_stringForKey:@"title"],
+   @"html": [dict plk_stringForKey:@"html"]
    }];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"thumbnail_url"];
 }
 
 @end

@@ -31,4 +31,9 @@
           }];
 }
 
++ (NSArray *)requiredKeys
+{
+	return @[@"image"];
+}
+
 @end

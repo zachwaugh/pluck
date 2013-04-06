@@ -20,6 +20,8 @@
 	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://vimeo.com/7100569"]]).to.beTruthy();
 	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://instagram.com/p/U6OD6Dq5LB/"]]).to.beTruthy();
   expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://dribbble.com/shots/931225-New-emoji-autocomplete-in-Flint"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://d.pr/i/xQxb"]]).to.beTruthy();
+	expect([PLKService isSupportedURL:[NSURL URLWithString:@"http://rd.io/x/QBStPlUnZA/"]]).to.beTruthy();
 }
 
 - (void)testItemForURL
@@ -29,7 +31,7 @@
 	__block PLKItem *item = nil;
 	__block NSError *error = nil;
 	
-	[PLKService itemForURL:url block:^(PLKItem *aItem, NSError *aError) {
+	[PLKService itemForURL:url completion:^(PLKItem *aItem, NSError *aError) {
 		item = aItem;
 		error = aError;
 	}];

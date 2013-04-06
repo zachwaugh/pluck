@@ -14,7 +14,7 @@
 
 @implementation PLKTwitterCardsService
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
++ (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *, NSError *))block
 {
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -34,7 +34,6 @@
 {
 	TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
 	NSArray *metaTags = [doc searchWithXPathQuery:@"/html/head/meta"];
-	
 	NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 	
 	// Seems to be a lack of standardization with tag attributes, I've seen meta tags with:
@@ -63,10 +62,15 @@
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-					@"url": [NSURL URLWithString:[dict plk_stringForKey:@"image"]],
+					@"url": [NSURL URLWithString:dict[@"image"]],
 					@"service": [dict plk_stringForKey:@"site"],
 					@"type": [dict plk_stringForKey:@"card"]
 					}];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"image", @"site", @"card"];
 }
 
 @end

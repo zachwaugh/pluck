@@ -92,6 +92,9 @@
 		92BCAF6116D0179D006264DE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 92BCAF5D16D0179D006264DE /* README.md */; };
 		92BCAF6E16D01C04006264DE /* PLKItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAF6D16D01C04006264DE /* PLKItemTest.m */; };
 		92BCAF6F16D01C43006264DE /* PLKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BCAF3516D0165C006264DE /* PLKItem.m */; };
+		92BECA931710A3AF00B1A496 /* NSDictionary+PluckTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BECA921710A3AF00B1A496 /* NSDictionary+PluckTest.m */; };
+		92BECA961710A5CB00B1A496 /* PLKRdioServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BECA951710A5CB00B1A496 /* PLKRdioServiceTest.m */; };
+		92BECA981710A6E500B1A496 /* rdio.json in Resources */ = {isa = PBXBuildFile; fileRef = 92BECA971710A6E500B1A496 /* rdio.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -240,6 +243,11 @@
 		92BCAF6716D018E8006264DE /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
 		92BCAF6C16D01C04006264DE /* PLKItemTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKItemTest.h; sourceTree = "<group>"; };
 		92BCAF6D16D01C04006264DE /* PLKItemTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKItemTest.m; sourceTree = "<group>"; };
+		92BECA911710A3AF00B1A496 /* NSDictionary+PluckTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PluckTest.h"; sourceTree = "<group>"; };
+		92BECA921710A3AF00B1A496 /* NSDictionary+PluckTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PluckTest.m"; sourceTree = "<group>"; };
+		92BECA941710A5CB00B1A496 /* PLKRdioServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLKRdioServiceTest.h; sourceTree = "<group>"; };
+		92BECA951710A5CB00B1A496 /* PLKRdioServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLKRdioServiceTest.m; sourceTree = "<group>"; };
+		92BECA971710A6E500B1A496 /* rdio.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rdio.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +287,7 @@
 				926EF76616D03796004D8EE6 /* youtube.json */,
 				926EF75D16D033D8004D8EE6 /* cloudapp.json */,
 				9256F1E216D2DFCD00E96DA3 /* dribbble.json */,
+				92BECA971710A6E500B1A496 /* rdio.json */,
 			);
 			path = fixtures;
 			sourceTree = "<group>";
@@ -367,10 +376,12 @@
 			children = (
 				92BCAF3A16D0175A006264DE /* Expecta */,
 				92BCAEF616D007C9006264DE /* Supporting Files */,
-				92BCAF6C16D01C04006264DE /* PLKItemTest.h */,
-				92BCAF6D16D01C04006264DE /* PLKItemTest.m */,
 				926EF75316D02584004D8EE6 /* NSURL+PluckTest.h */,
 				926EF75416D02584004D8EE6 /* NSURL+PluckTest.m */,
+				92BECA911710A3AF00B1A496 /* NSDictionary+PluckTest.h */,
+				92BECA921710A3AF00B1A496 /* NSDictionary+PluckTest.m */,
+				92BCAF6C16D01C04006264DE /* PLKItemTest.h */,
+				92BCAF6D16D01C04006264DE /* PLKItemTest.m */,
 				926EF74816D023E2004D8EE6 /* PLKServiceTest.h */,
 				926EF74916D023E2004D8EE6 /* PLKServiceTest.m */,
 				928D977216D71EDF00784753 /* PLKOpenGraphServiceTest.h */,
@@ -391,6 +402,8 @@
 				9256F1DD16D2DEEE00E96DA3 /* PLKDribbbleServiceTest.m */,
 				9204749E16FA0E2C009C3C4B /* PLKDroplrServiceTest.h */,
 				9204749F16FA0E2C009C3C4B /* PLKDroplrServiceTest.m */,
+				92BECA941710A5CB00B1A496 /* PLKRdioServiceTest.h */,
+				92BECA951710A5CB00B1A496 /* PLKRdioServiceTest.m */,
 			);
 			path = PluckTests;
 			sourceTree = "<group>";
@@ -618,6 +631,7 @@
 				928D977B16D72BAA00784753 /* imdb.html in Resources */,
 				928D977D16D72D1800784753 /* github.html in Resources */,
 				920474A716FA12EE009C3C4B /* droplr.html in Resources */,
+				92BECA981710A6E500B1A496 /* rdio.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +728,8 @@
 				920474A416FA1244009C3C4B /* PLKDroplrService.m in Sources */,
 				920474A516FA126A009C3C4B /* NSDictionary+Pluck.m in Sources */,
 				92196795170F309000E61D8E /* PLKRdioService.m in Sources */,
+				92BECA931710A3AF00B1A496 /* NSDictionary+PluckTest.m in Sources */,
+				92BECA961710A5CB00B1A496 /* PLKRdioServiceTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

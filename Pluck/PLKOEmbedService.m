@@ -8,6 +8,7 @@
 
 #import "PLKOEmbedService.h"
 #import "PLKItem.h"
+#import "NSDictionary+Pluck.h"
 #import "AFHTTPClient.h"
 
 @implementation PLKOEmbedService
@@ -23,7 +24,7 @@
 	return nil;
 }
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *, NSError *))block
++ (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *, NSError *))block
 {
 	AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[self oEmbedBaseURL]];
 	NSDictionary *params = [self oEmbedParamsForURL:url];
@@ -47,15 +48,17 @@
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  // Need to ensure these keys are present
-  if (![dict plk_isSafeForKeys:@[@"type", @"url", @"provider_name", @"title"]]) return nil;
-  
   return [PLKItem itemWithDictionary:@{
           @"type": dict[@"type"],
           @"url": [NSURL URLWithString:dict[@"url"]],
           @"service": dict[@"provider_name"],
           @"title": dict[@"title"]
           }];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"type", @"url", @"provider_name", @"title"];
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "PLKDribbbleService.h"
 #import "PLKDroplrService.h"
 #import "PLKRdioService.h"
+#import "NSDictionary+Pluck.h"
 
 NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 
@@ -25,6 +26,7 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	static NSArray *_services = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
+		// All services supported by default
 		_services = @[[PLKCloudAppService class], [PLKYoutubeService class], [PLKFlickrService class], [PLKVimeoService class], [PLKInstagramService class], [PLKDribbbleService class], [PLKDroplrService class], [PLKRdioService class]];
 	});
 	
@@ -47,7 +49,7 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	return NO;
 }
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *item, NSError *error))block
++ (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *item, NSError *error))block
 {
 	Class serviceClass = nil;
 	
@@ -59,7 +61,7 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 	}
 	
 	if (serviceClass) {
-		[serviceClass itemForURL:url block:block];
+		[serviceClass itemForURL:url completion:block];
 	} else {
 		// No service found that supports this URL - return unsupported URL error
 		NSError *error = [NSError errorWithDomain:PLKErrorDomain code:PLKErrorUnsupportedURL userInfo:nil];
@@ -69,7 +71,8 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
-  if (!dict || dict.count == 0) return nil;
+	// We try to be extra defensive here, we don't want a missing key or a change in the response to possibly cause a crash in the client
+  if (!dict || dict.count == 0 || ![dict plk_hasValuesForKeys:[self requiredKeys]]) return nil;
   
   PLKItem *item = nil;
   
@@ -87,6 +90,12 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 {
   // Implement in subclass
   return nil;
+}
+
++ (NSArray *)requiredKeys
+{
+	// Implement in subclass, array of keys that must present in response dictionary
+	return @[];
 }
 
 @end

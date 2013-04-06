@@ -9,6 +9,7 @@
 #import "PLKCloudAppService.h"
 #import "PLKItem.h"
 #import "NSURL+Pluck.h"
+#import "NSDictionary+Pluck.h"
 #import "AFJSONRequestOperation.h"
 
 #define CLOUDAPP_REGEX @"https?://cl\\.ly/.*"
@@ -20,7 +21,7 @@
 	return (url && [url plk_isMatchedByRegex:CLOUDAPP_REGEX]);
 }
 
-+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *item, NSError *error))block
++ (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *item, NSError *error))block
 {
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
   [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -39,9 +40,9 @@
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-	// We only care about image drops
-	if (![dict[@"item_type"] isEqualToString:@"image"]) return nil;
-    
+	// We only care about image drops currently
+  if (![dict[@"item_type"] isEqualToString:@"image"]) return nil;
+
   return [PLKItem itemWithDictionary:@{
           @"url": [NSURL URLWithString:dict[@"content_url"]],
           @"type": @"photo",
@@ -49,6 +50,11 @@
           @"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
           @"title": dict[@"name"]
           }];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"content_url", @"thumbnail_url", @"name", @"item_type"];
 }
 
 @end

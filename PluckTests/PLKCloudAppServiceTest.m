@@ -55,7 +55,7 @@
 	
 	//[Expecta setAsynchronousTestTimeout:5];
 	
-	[PLKCloudAppService itemForURL:url block:^(PLKItem *aItem, NSError *aError) {
+	[PLKCloudAppService itemForURL:url completion:^(PLKItem *aItem, NSError *aError) {
 		item = aItem;
 		error = aError;
 	}];

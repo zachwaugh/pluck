@@ -11,6 +11,6 @@
 @interface NSDictionary (Pluck)
 
 - (NSString *)plk_stringForKey:(id)key;
-- (BOOL)plk_isSafeForKeys:(NSArray *)keys;
+- (BOOL)plk_hasValuesForKeys:(NSArray *)keys;
 
 @end

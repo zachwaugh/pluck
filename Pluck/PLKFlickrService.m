@@ -32,16 +32,18 @@
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  // Need to ensure these keys are present
-  if (![dict plk_isSafeForKeys:@[@"type", @"url", @"thumbnail_url", @"provider_name", @"title"]]) return nil;
-  
 	return [PLKItem itemWithDictionary:@{
 						@"type": dict[@"type"],
 						@"url": [NSURL URLWithString:dict[@"url"]],
 						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"service": dict[@"provider_name"],
+						@"service": @"Flickr",
 						@"title": dict[@"title"]
 						}];
+}
+
++ (NSArray *)requiredKeys
+{
+	return @[@"type", @"url", @"thumbnail_url", @"title"];
 }
 
 @end

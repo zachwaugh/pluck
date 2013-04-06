@@ -9,7 +9,7 @@
 #import "PLKDribbbleService.h"
 #import "PLKItem.h"
 #import "NSURL+Pluck.h"
-#import "AFJSONRequestOperation.h"
+#import "NSDictionary+Pluck.h"
 
 #define DRIBBBLE_REGEX @"https?://.*(dribbble\\.com|drbl\\.in)/.*"
 
@@ -36,9 +36,13 @@
 						@"url": [NSURL URLWithString:dict[@"image_url"]],
 						@"type": @"photo",
 						@"service": @"Dribbble",
-						@"title": dict[@"title"]
+						@"title": [dict plk_stringForKey:@"title"]
 						}];
 }
 
++ (NSArray *)requiredKeys
+{
+	return @[@"image_url"];
+}
 
 @end

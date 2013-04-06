@@ -9,8 +9,7 @@
 #import "PLKYoutubeService.h"
 #import "PLKItem.h"
 #import "NSURL+Pluck.h"
-#import "AFHTTPClient.h"
-#import "AFJSONRequestOperation.h"
+#import "NSDictionary+Pluck.h"
 
 #define YOUTUBE_REGEX @"https?://.*(youtube\\.com|youtu\\.be)/.*"
 
@@ -34,12 +33,18 @@
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-						@"type": dict[@"type"],
+						@"type": [dict plk_stringForKey:@"type"],
 						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"html": dict[@"html"],
-						@"service": dict[@"provider_name"],
-						@"title": dict[@"title"]
+						@"html": [dict plk_stringForKey:@"html"],
+						@"service": @"YouTube",
+						@"title": [dict plk_stringForKey:@"title"]
 					 }];
+}
+
+
++ (NSArray *)requiredKeys
+{
+	return @[@"type", @"thumbnail_url"];
 }
 
 @end
