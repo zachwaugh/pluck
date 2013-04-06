@@ -10,14 +10,16 @@ Pluck is available via CocoaPods, but you can also install it directly. Pluck re
 
 ## Usage
 
-`[PluckService itemForURL:url block:block]`
+`[PluckService itemForURL:url completion:block]`
 
-This is the primary method. It will figure out which service supports the URL, fetch it and return a `PLKItem`. You can also call the same method on any service directly.
+This is the primary method. It will figure out which service supports the URL, fetch it and return a `PLKItem`. You can also call the same method on any service directly. Check the demo project and tests for more examples
 
 
 ## Demo
 
 There is a PluckDemo project that has a demo Mac app for entering a URL and returning the data and image. The Xcode project also contains the tests.
+
+![Pluck demo screenshot](http://cl.ly/image/3S3t2X3K3y0z/Image%202013-04-06%20at%203.19.57%20PM.png)
 
 
 ## Services
@@ -30,6 +32,7 @@ Pluck currently supports:
 - Instagram
 - Dribbble
 - Droplr
+- Rdio
 
 Support is planned for:
 - Twitter
@@ -41,8 +44,8 @@ Support is planned for:
 Pluck services are based on the `PLKService` class. To add another service, subclass `PLKService` and add support for these three class methods:
 
 - `+ (BOOL)isSupportedURL:(NSURL *)url`
-- `+ (void)itemForURL:(NSURL *)url block:(void (^)(PLKItem *item, NSError *error))block`
-- `+ (PLKItem *)itemFromDictionary:(NSDictionary *)dictionary`
+- `+ (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *item, NSError *error))block`
+- `+ (PLKItem *)parseItemFromDictionary:(NSDictionary *)dictionary`
 
 Check the existing services for examples.
 
