@@ -64,7 +64,7 @@
 
 + (NSArray *)requiredKeys
 {
-	return @[@"image", @"site_name"];
+	return @[@"image", @"title"];
 }
 
 @end
