@@ -33,13 +33,13 @@
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-						@"type": [dict plk_stringForKey:@"type"],
-						@"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
-						@"html": [dict plk_stringForKey:@"html"],
-						@"service": @"Vimeo",
-						@"title": [dict plk_stringForKey:@"title"]
-						}];
+                                         @"type": [dict plk_stringForKey:@"type"],
+                                         @"url": [NSURL URLWithString:dict[@"thumbnail_url"]],
+                                         @"thumbnail": [NSURL URLWithString:dict[@"thumbnail_url"]],
+                                         @"html": [dict plk_stringForKey:@"html"],
+                                         @"service": @"Vimeo",
+                                         @"title": [dict plk_stringForKey:@"title"]
+                                         }];
 }
 
 + (NSArray *)requiredKeys

@@ -20,7 +20,7 @@
 
 + (NSURL *)oEmbedBaseURL
 {
-  // Must implement in subclass
+    // Must implement in subclass
 	return nil;
 }
 
@@ -29,17 +29,9 @@
     AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
 	NSDictionary *params = [self oEmbedParamsForURL:url];
 
-    [client GET:[self oEmbedBaseURL].absoluteString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSError *error = nil;
-		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
-		PLKItem *item = nil;
-		
-		if (!error) {
-			item = [self itemFromDictionary:dict];
-		} else {
-			NSLog(@"error creating json from response: %@", error);
-		}
-		
+    [client GET:self.oEmbedBaseURL.absoluteString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		PLKItem *item = [self itemFromDictionary:responseObject];
+
 		if (block) block(item, nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (block) block(nil, error);
@@ -58,7 +50,7 @@
 
 + (NSArray *)requiredKeys
 {
-	return @[@"type", @"url", @"provider_name", @"title"];
+	return @[ @"type", @"url", @"provider_name", @"title" ];
 }
 
 @end

@@ -23,6 +23,13 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>1217D04D63A3435199F94E3A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0F10D21BF7E34139B5208082</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>2EB0007A44E142B48FE2F3A8</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -73,6 +80,30 @@ error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or up
 EOM
     exit 1
 fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>8C36757443A7485BA0D93FD8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
@@ -1790,6 +1821,7 @@ fi
 				<string>92BCAEF116D007C9006264DE</string>
 				<string>92BCAEF216D007C9006264DE</string>
 				<string>92BCAF5F16D0179D006264DE</string>
+				<string>1217D04D63A3435199F94E3A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -1849,10 +1881,12 @@ fi
 			<string>92BCAF0316D007C9006264DE</string>
 			<key>buildPhases</key>
 			<array>
+				<string>ED1EA9F00C494FDEAF859845</string>
 				<string>92BCAEEA16D007C9006264DE</string>
 				<string>92BCAEEB16D007C9006264DE</string>
 				<string>92BCAEEC16D007C9006264DE</string>
 				<string>92BCAEED16D007C9006264DE</string>
+				<string>8C36757443A7485BA0D93FD8</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -2192,6 +2226,8 @@ fi
 		</dict>
 		<key>92BCAF0416D007C9006264DE</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A2992ACD41484040971B68A8</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>COMBINE_HIDPI_IMAGES</key>
@@ -2225,6 +2261,8 @@ fi
 		</dict>
 		<key>92BCAF0516D007C9006264DE</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A2992ACD41484040971B68A8</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>COMBINE_HIDPI_IMAGES</key>
@@ -3027,6 +3065,36 @@ fi
 			<string>0F10D21BF7E34139B5208082</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>ED1EA9F00C494FDEAF859845</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

@@ -54,17 +54,17 @@
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-					@"url": [NSURL URLWithString:dict[@"image"]],
-					@"service": [dict plk_stringForKey:@"site_name"],
-					@"title": [dict plk_stringForKey:@"title"],
-          @"description": [dict plk_stringForKey:@"description"],
-					@"type": @"photo"
-					}];
+                                         @"url": [NSURL URLWithString:dict[@"image"]],
+                                         @"service": [dict plk_stringForKey:@"site_name"],
+                                         @"title": [dict plk_stringForKey:@"title"],
+                                         @"description": [dict plk_stringForKey:@"description"],
+                                         @"type": @"photo"
+                                         }];
 }
 
 + (NSArray *)requiredKeys
 {
-	return @[@"image", @"site_name"];
+	return @[ @"image", @"site_name" ];
 }
 
 @end

@@ -23,17 +23,17 @@
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
 	return [PLKItem itemWithDictionary:@{
-					@"url": [NSURL URLWithString:dict[@"image"]],
-					@"title": [dict plk_stringForKey:@"title"],
-          @"description": [dict plk_stringForKey:@"description"],
-          @"service": @"Droplr",
-					@"type": @"photo"
-          }];
+                                         @"url": [NSURL URLWithString:dict[@"image"]],
+                                         @"title": [dict plk_stringForKey:@"title"],
+                                         @"description": [dict plk_stringForKey:@"description"],
+                                         @"service": @"Droplr",
+                                         @"type": @"photo"
+                                         }];
 }
 
 + (NSArray *)requiredKeys
 {
-	return @[@"image"];
+	return @[ @"image" ];
 }
 
 @end
