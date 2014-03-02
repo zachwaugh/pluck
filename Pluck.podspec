@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
   s.requires_arc = true
   s.dependency 'AFNetworking', '2.2.0'
-  s.dependency 'hpple', :git => 'https://github.com/zachwaugh/hpple.git'
+  s.dependency 'hpple'
 end
