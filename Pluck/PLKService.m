@@ -72,24 +72,24 @@ NSString * const PLKErrorDomain = @"com.zachwaugh.pluck.error";
 + (PLKItem *)itemFromDictionary:(NSDictionary *)dict
 {
 	// We try to be extra defensive here, we don't want a missing key or a change in the response to possibly cause a crash in the client
-  if (!dict || dict.count == 0 || ![dict plk_hasValuesForKeys:[self requiredKeys]]) return nil;
-  
-  PLKItem *item = nil;
-  
-  @try {
-    item = [self parseItemFromDictionary:dict];
-  }
-  @catch (NSException *exception) {
-    NSLog(@"[%@] itemFromDictionary: %@, exception: %@", self, dict, exception);
-  }
-  
+    if (!dict || dict.count == 0 || ![dict plk_hasValuesForKeys:[self requiredKeys]]) return nil;
+    
+    PLKItem *item = nil;
+    
+    @try {
+        item = [self parseItemFromDictionary:dict];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"[%@] itemFromDictionary: %@, exception: %@", self, dict, exception);
+    }
+    
 	return item;
 }
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
 {
-  // Implement in subclass
-  return nil;
+    // Implement in subclass
+    return nil;
 }
 
 + (NSArray *)requiredKeys

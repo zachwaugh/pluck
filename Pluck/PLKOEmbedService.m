@@ -9,7 +9,7 @@
 #import "PLKOEmbedService.h"
 #import "PLKItem.h"
 #import "NSDictionary+Pluck.h"
-#import "AFHTTPClient.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 @implementation PLKOEmbedService
 
@@ -26,11 +26,11 @@
 
 + (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *, NSError *))block
 {
-	AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[self oEmbedBaseURL]];
+    AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
 	NSDictionary *params = [self oEmbedParamsForURL:url];
 
-	[client getPath:@"" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSError *error = nil;
+    [client GET:[self oEmbedBaseURL].absoluteString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error = nil;
 		NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
 		PLKItem *item = nil;
 		
@@ -41,9 +41,9 @@
 		}
 		
 		if (block) block(item, nil);
-	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		if (block) block(nil, error);
-	}];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (block) block(nil, error);
+    }];
 }
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict

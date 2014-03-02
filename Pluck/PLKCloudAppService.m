@@ -10,7 +10,7 @@
 #import "PLKItem.h"
 #import "NSURL+Pluck.h"
 #import "NSDictionary+Pluck.h"
-#import "AFJSONRequestOperation.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 #define CLOUDAPP_REGEX @"https?://cl\\.ly/.*"
 
@@ -23,19 +23,17 @@
 
 + (void)itemForURL:(NSURL *)url completion:(void (^)(PLKItem *item, NSError *error))block
 {
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-  [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-  
-  AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-    PLKItem *item = [self itemFromDictionary:JSON];
-    
-    if (block) block(item, nil);
-  } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-    NSLog(@"Error fetching item for CloudApp url: %@, status: %ld, error: %@, JSON: %@", url, response.statusCode, error, JSON);
-    if (block) block(nil, error);
-  }];
-  
-  [operation start];
+    AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
+    [client.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+
+    [client GET:url.absoluteString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        PLKItem *item = [self itemFromDictionary:responseObject];
+        
+        if (block) block(item, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error fetching item for CloudApp url: %@, status: %ld, error: %@, JSON: %@", url, operation.response.statusCode, error, operation.responseString);
+        if (block) block(nil, error);
+    }];
 }
 
 + (PLKItem *)parseItemFromDictionary:(NSDictionary *)dict
@@ -54,7 +52,7 @@
 
 + (NSArray *)requiredKeys
 {
-	return @[@"content_url", @"thumbnail_url", @"name", @"item_type"];
+	return @[ @"content_url", @"thumbnail_url", @"name", @"item_type" ];
 }
 
 @end

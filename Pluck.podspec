@@ -7,10 +7,9 @@ Pod::Spec.new do |s|
   s.author       = {'Zach Waugh' => 'zwaugh@gmail.com'}
   s.source       = {:git => 'https://github.com/zachwaugh/pluck.git', :tag => "#{s.version}"}
   s.source_files = 'Pluck/*.{h,m}'
-  s.ios.deployment_target = '5.0'
-  s.osx.deployment_target = '10.7'
-  s.library      = 'xml2.2'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+  s.ios.deployment_target = '7.0'
+  s.osx.deployment_target = '10.9'
   s.requires_arc = true
-  s.dependency 'AFNetworking'
+  s.dependency 'AFNetworking', '2.2.0'
+  s.dependency 'hpple', :git => 'https://github.com/zachwaugh/hpple.git'
 end
